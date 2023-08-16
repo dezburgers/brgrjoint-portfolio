@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+
       boxShadow: {
         '5xl': '0 0 50px 50px rgba(0, 0, 0, 0.9)', // Adjust the values as per your requirements
       },
@@ -20,7 +21,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        monteserat: ["monteserat"],
+        Montserrat: ["Montserrat"],
         poppins: ["Poppins", "sans-serif"],
       },
       spacing: {
@@ -31,12 +32,7 @@ module.exports = {
         '256': '64rem',
       },
       colors: {
-        blue: {
-          DEFAULT: "#CC66CC",
-        },
-        magenta: {
-          DEFAULT: "#FF00FF",
-        },
+        peach: '#FBE8DE',
       },
     },
   },

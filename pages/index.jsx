@@ -6,12 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import {
-  MDBCol,
   MDBContainer,
-  MDBIcon,
-  MDBRow,
-  MDBTypography,
 } from "mdb-react-ui-kit";
+import { MDBAccordion, MDBAccordionItem } from "mdb-react-ui-kit";
 import Marquee from "react-fast-marquee";
 import MouseGlow from './components/mouse/mouseglow';
 import { useSpring, animated, config } from 'react-spring';
@@ -196,7 +193,7 @@ const WeAre = () => {
           <span
             onMouseEnter={() => setShowFullText(true)}
             onMouseLeave={() => setShowFullText(false)}
-            className={`text-xs ease-in-out duration-300 md:text-base lg:text-xl marquee text-center font-normal mb-4 ${showFullText ? 'block' : 'hidden'
+            className={`pt-12 text-xs ease-in-out duration-300 md:text-base lg:text-xl marquee text-center font-normal mb-4 ${showFullText ? 'block' : 'hidden'
               }`}
           >
             {showFullText ? (
@@ -226,7 +223,7 @@ const WeAre = () => {
 
 const VideoPortfolio = () => {
   return (
-    <div id="VideoPortfolio" className="w-screen flex-col justify-center select-none md:pb-64">
+    <div id="VideoPortfolio" className="w-full bg-white flex-col justify-center select-none md:pb-64">
       <div>
         <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">World Vision Rwanda | Travel Doc</text>
         <div className="flex h-full items-center select-none px-4 pt-2 md:px-32">
@@ -250,7 +247,7 @@ const VideoPortfolio = () => {
         </div>
       </div>
 
-      <div className="pt-32 sm:pt-8 md:pb-44">
+      <div className="pt-32 sm:pt-8 md:pb-44 lg:pb-2">
         <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Youth Community Center | "Meet Alex"</text>
         <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
           <div className="text-black opacity-5 font-bold text-5xl xl:text-9xl w-full h-full">
@@ -266,14 +263,14 @@ const VideoPortfolio = () => {
             </div>
           </div>
           <video muted autoPlay loop
-            className="hover:scale-105 ease-in-out duration-300 w-4/5 md:w-1/2 absolute right-4 rounded-3xl z-10 hover:drop-shadow-5xl" preload="auto">
+            className="hover:scale-105 ease-in-out duration-300 w-4/5 md:w-1/2 absolute right-8 rounded-3xl z-10 hover:drop-shadow-5xl" preload="auto">
             <source src="./videos/tb-ent.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
 
-      <div className="pt-32 sm:pt-48 md:pb-44">
+      <div className="pt-32 sm:pt-48 md:pb-44 lg:pb-2">
         <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">Bayview San Diego | Social Media </text>
         <div className="flex h-full items-center select-none px-4 pt-2 md:px-32">
           <video muted autoPlay loop
@@ -296,7 +293,7 @@ const VideoPortfolio = () => {
         </div>
       </div>
 
-      <div className="pt-32 sm:pt-48 md:pb-44">
+      <div className="pt-32 sm:pt-48 md:pb-44 lg:pb-2">
         <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Las Vegas Pop Rapper | Music Video</text>
         <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
           <div className="text-black opacity-5 font-bold text-5xl xl:text-9xl w-full h-full">
@@ -324,6 +321,26 @@ const VideoPortfolio = () => {
   );
 };
 
+const ServicesSection = () => {
+  return (
+    <main id="ServicesSection" className="bg-peach flex-col w-2/3 md:pr-11">
+      <div>
+        <div className="font-bold text-7xl lg:text-8xl font-mono pr-4 pl-4 md:pl-44 pt-24 md:pt-16 mt-4 text-left md:text-left pb-12">
+          We Are <br />
+          BRGR JOINT
+          <span className="text-xs md:text-base lg:text-lg marquee text-left md:text-left font-normal mb-4">
+            A full-service production house that specializes in empowering those who empower.
+            At BRGR JOINT Productions,
+            we specialize in giving a voice to those who specialize in empowering others.
+            With a strong expertise in schools, universities, non-profits, and churches,
+            our lenses were made to capture the essence of your mission, vision, and message.
+          </span>
+        </div>
+      </div>
+    </main >
+  );
+};
+
 const DopeStuff = () => (
   <section id="DopeStuff" className="flex bg-white sm:pt-64 md:items-start pb-24 ">
     <div className="justify-center pl-12 z-0">
@@ -343,23 +360,52 @@ const DopeStuff = () => (
   </section >
 );
 
-const ServicesSection = () => {
+
+
+const BenefitsGrid = () => {
+  const features = [
+    {
+      icon: <i className="fas fa-users fa-4x"></i>,
+      title: 'Specialists',
+      text: 'We stick to our niche – non-profits, schools, and churches. Our focused experience within these sectors enables us to deliver exceptional results tailored to your unique needs.',
+    },
+    {
+      icon: <i className="fas fa-rocket fa-4x"></i>,
+      title: 'Super Duper Fast',
+      text: 'While project timelines vary, we always deliver your content swiftly without compromising quality.',
+    },
+    {
+      icon: <i className="fas fa-medal fa-4x"></i>,
+      title: 'Top-Flight Quality',
+      text: 'Experience unparalleled excellence available whenever you need it.',
+    },
+    {
+      icon: <i className="fas fa-adjust fa-4x"></i>,
+      title: "We're Flexible",
+      text: 'Tailor your services to match your demands – increase, decrease, pause, or cancel services at any time.',
+    },
+    {
+      icon: <i className="fas fa-layer-group fa-4x"></i>,
+      title: 'Diverse',
+      text: 'We excel in projects of all sizes and can support your needs from start to finish.',
+    },
+    {
+      icon: <i className="fas fa-shield-alt fa-4x"></i>,
+      title: 'Never Share',
+      text: 'Everything we do is for you and you only, and our work never lacks originality.',
+    },
+  ];
+
   return (
-    <main id="ServicesSection" className="flex-col w-2/3 h-1/5 md:pr-11">
-      <div>
-        <div className="font-bold text-7xl lg:text-8xl font-mono pr-4 pl-4 md:pl-44 pt-24 md:pt-16 mt-4 text-left md:text-left pb-12">
-          We Are <br />
-          BRGR JOINT
-          <span className="text-xs md:text-base lg:text-lg marquee text-left md:text-left font-normal mb-4">
-            A full-service production house that specializes in empowering those who empower.
-            At BRGR JOINT Productions,
-            we specialize in giving a voice to those who specialize in empowering others.
-            With a strong expertise in schools, universities, non-profits, and churches,
-            our lenses were made to capture the essence of your mission, vision, and message.
-          </span>
+    <div id="Benefits" className="grid w-full px-64 pt-32 grid-cols-3 gap-4 text-center font-monteserat">
+      {features.map((feature, index) => (
+        <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
+          {feature.icon}
+          <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
+          <p className="mt-2 font text-gray-700">{feature.text}</p>
         </div>
-      </div>
-    </main >
+      ))}
+    </div>
   );
 };
 
@@ -382,90 +428,70 @@ const Perfection = () => (
   </section>
 );
 
-const FaqSection = () => (
-  <MDBContainer>
-    <section className="pt-44" id="FaqSection">
-      <MDBTypography
-        tag="h3"
-        className="text-center mb-4 pb-2 text-primary fw-bold"
-      >
-        FAQ
-      </MDBTypography>
-      <p className="text-center mb-5">
-        Find the answers for the most frequently asked questions below
-      </p>
 
-      <MDBRow>
-        <MDBCol md="6" lg="4" className="mb-4">
-          <MDBTypography tag="h6" className="mb-3 text-primary">
-            <MDBIcon far icon="paper-plane text-primary pe-2" /> A simple
-            question?
-          </MDBTypography>
-          <p>
-            <strong>
-              <u>Absolutely!</u>
-            </strong>{" "}
-            We work with top payment companies which guarantees your safety
-            and security. All billing information is stored on our payment
-            processing partner.
-          </p>
-        </MDBCol>
-        <MDBCol md="6" lg="4" className="mb-4">
-          <MDBTypography tag="h6" className="mb-3 text-primary">
-            <MDBIcon fas icon="pen-alt text-primary pe-2" /> A question that
-            is longer then the previous one?
-          </MDBTypography>
-          <p>
-            <strong>
-              <u>Yes, it is possible!</u>
-            </strong>{" "}
-            You can cancel your subscription anytime in your account. Once the
-            subscription is cancelled, you will not be charged next month.
-          </p>
-        </MDBCol>
-        <MDBCol md="6" lg="4" className="mb-4">
-          <MDBTypography tag="h6" className="mb-3 text-primary">
-            <MDBIcon fas icon="user text-primary pe-2" /> A simple question?
-          </MDBTypography>
-          <p>
-            Currently, we only offer monthly subscription. You can upgrade or
-            cancel your monthly account at any time with no further
-            obligation.
-          </p>
-        </MDBCol>
-        <MDBCol md="6" lg="4" className="mb-4">
-          <MDBTypography tag="h6" className="mb-3 text-primary">
-            <MDBIcon fas icon="rocket text-primary pe-2" /> A simple question?
-          </MDBTypography>
-          <p>
-            Yes. Go to the billing section of your dashboard and update your
-            payment information.
-          </p>
-        </MDBCol>
-        <MDBCol md="6" lg="4" className="mb-4">
-          <MDBTypography tag="h6" className="mb-3 text-primary">
-            <MDBIcon fas icon="home text-primary pe-2" /> A simple question?
-          </MDBTypography>
-          <p>
-            <strong>
-              <u>Unfortunately no</u>.
-            </strong>{" "}
-            We do not issue full or partial refunds for any reason.
-          </p>
-        </MDBCol>
-        <MDBCol md="6" lg="4" className="mb-4">
-          <MDBTypography tag="h6" className="mb-3 text-primary">
-            <MDBIcon fas icon="book-open text-primary pe-2" /> Another
-            question that is longer than usual
-          </MDBTypography>
-          <p>
-            Of course! We’re happy to offer a free plan to anyone who wants to
-            try our service.
-          </p>
-        </MDBCol>
-      </MDBRow>
-    </section>
-  </MDBContainer>
+const FaqSection = () => (
+  <div>  <h2 className="text-8xl font-bold font-Montserrat">FAQs</h2>
+    < MDBContainer className="mt-5 font-Montserrat pb-12" style={{ maxWidth: '1000px' }}>
+      <MDBAccordion alwaysOpen initialActive={1} flush>
+        <style>
+          {`
+          .accordion-item .accordion-button:not(.collapsed) {
+            background-color: transparent;
+            box-shadow: none;
+          }
+          
+          .accordion-item .accordion-button:focus {
+            box-shadow: none;
+          }
+          
+          .accordion-item .accordion-button {
+            padding: 1rem 0;
+          }
+          
+          .accordion-item .accordion-collapse {
+            border: none;
+            background-color: transparent;
+          }
+          
+          .accordion-item .accordion-body {
+            padding: 0;
+          }
+        `}
+        </style>
+        <MDBAccordionItem collapseId={1} headerTitle="What's the turnaround time look like?">
+          We're on it! You'll get your stuff within just 48 hours.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={2} headerTitle="How are you completing it so quickly?">
+          Short answer, because we're skilled! Our expertise makes things happen in a snap. With over leads having over 10 years experience, you're in good hands.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={3} headerTitle="Why not hire someone full-time, you know?">
+          You've got a point! Hiring a full-timer can come at a hefty cost of over $100,000 a year, plus perks. And finding the perfect fit? That's a journey. Also, why pay for downtime when our monthly plan lets you take a break?
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={4} headerTitle="What if I'm not connecting with the work?">
+          No worries at all! We'll fine-tune until you're completely satisfied. Your happiness is our priority.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={5} headerTitle="Tell me about this 'pause' option.">
+          Life can get hectic, right? Feel free to hit pause if things get a bit overwhelming.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={6} headerTitle="Can I get a refund, though?">
+          Unfortunately, due to our commitment to top-quality work, we can't provide refunds.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={7} headerTitle="So do you need my social media password?">
+          Yes, we need the passwords to whatever account you would like managed. If that still doesn't ease your sould, we can create a fresh account.
+          You can also take the lead with our standard package and post the content we create on your own terms.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={8} headerTitle="Is my password safe in your hands?">
+          Absolutely secure! Our reliable manager is the only one with access to your login details.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={9} headerTitle="So, who's part of your video and photo crew?">
+          We've got a skilled team for every project – no matter the size. Our network covers all bases.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={10} headerTitle="Gear check, what equipment do you use?">
+          Think Blackmagic Pocket Cinemas, Canon EOS Rs, Canon M50mkii, Canon 24-105mm, Tamron 24-70, and Rokinon Cin-E Lenses and all around top-notch gear ready to roll.
+        </MDBAccordionItem>
+      </MDBAccordion>
+    </MDBContainer >
+  </div >
 );
 
 const OnStageSection = () => (
@@ -527,39 +553,50 @@ const FooterNav = () => {
   };
 
   return (
-    <footer className="fixed z-40 bottom-5 left-10 right-10 font-mono font-bold w-1/3 p-4 bg-white rounded-3xl mx-auto shadow-2xl">
-      <div className="flex justify-center text-sm ">
-        <button className="hover:bg-black hover:text-white rounded-lg p-2 mx-2" onClick={() => scrollToSection('WeAre')}>
+    <footer className="fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-1/3 p-2 bg-white mx-auto rounded-2xl shadow-2xl">
+      <div className="flex justify-center text-md ">
+        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('WeAre')}>
           We Are
         </button>
-        <button className=" hover:bg-black hover:text-white rounded-lg p-2 mx-2" onClick={() => scrollToSection('VideoPortfolio')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('VideoPortfolio')}>
           Our Highlights
         </button>
-        <button className="hover:bg-black hover:text-white rounded-lg p-2 mx-2" onClick={() => scrollToSection('DopeStuff')}>
-          Dope Stuff
+        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('Benefits')}>
+          Benefits
         </button>
-        <button className="hover:bg-black hover:text-white rounded-lg p-2 mx-2" onClick={() => scrollToSection('ServicesSection')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('ServicesSection')}>
           Services
         </button>
-        <button className="hover:bg-black hover:text-white rounded-lg p-2 mx-2" onClick={() => scrollToSection('Perfection')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('Perfection')}>
           Perfection
         </button>
-        <button className="hover:bg-black hover:text-white rounded-lg p-2 mx-2" onClick={() => scrollToSection('FaqSection')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('FaqSection')}>
           FAQs
         </button>
       </div>
-    </footer>
+    </footer >
   );
 };
 
 
+
 export default function Home() {
+  const [showFooter, setShowFooter] = useState(false);
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      setShowFooter(true);
+    }, 3000);
+
+    return () => clearTimeout(delay);
+  }, []);
   return (
     <div>
       <Head>
         <title>Creativity Done Right</title>
         <meta name="description" content="Taking Creativity To The Next" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
       </Head>
       <main className="overflow-x-hidden">
         <main className=" cursor-none ">
@@ -570,9 +607,10 @@ export default function Home() {
           <VideoPortfolio />
         </main>
       </main>
-      <main className=" select-none bg-white">
-        <DopeStuff />
+      <main className=" select-none">
         <ServicesSection />
+        <DopeStuff />
+        <BenefitsGrid />
         <Perfection />
         <FaqSection />
       </main>
@@ -583,7 +621,9 @@ export default function Home() {
         <main className="overflow-x-hidden">
         </main >
         <SplashScreen />
-        <FooterNav />
+        <div style={{ opacity: showFooter ? 1 : 0, transition: 'opacity .5s ease-in-out' }}>
+
+          {showFooter && <FooterNav />} </div>
       </main>
     </div >
   );
