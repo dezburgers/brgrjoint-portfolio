@@ -7,8 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   MDBContainer,
+  MDBAccordion,
+  MDBAccordionItem
 } from "mdb-react-ui-kit";
-import { MDBAccordion, MDBAccordionItem } from "mdb-react-ui-kit";
 import Marquee from "react-fast-marquee";
 import MouseGlow from './components/mouse/mouseglow';
 import { useSpring, animated, config } from 'react-spring';
@@ -45,16 +46,16 @@ const SplashScreen = () => {
   });
 
   const fadeBg = useSpring({
-    to: { opacity: 0 },
-    from: { opacity: 1 },
-    config: { duration: 1800 },
-    delay: 1500, // Delay after the animation sequence starts
+    to: { transform: 'scale(0)', opacity: 1, borderRadius: '50%' },
+    from: { transform: 'scale(1)', opacity: 1, borderRadius: '0%' },
+    config: { duration: 300 },
+    delay: 1100,
   });
   const fadeLogo = useSpring({
     to: { opacity: 0 },
     from: { opacity: 1 },
     config: { duration: 400 },
-    delay: 1400, // Delay after the animation sequence starts
+    delay: 1200, // Delay after the animation sequence starts
   });
 
   return (
