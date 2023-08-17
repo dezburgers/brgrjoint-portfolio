@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   MDBContainer,
   MDBAccordion,
-  MDBAccordionItem
+  MDBAccordionItem, MDBTypography
 } from "mdb-react-ui-kit";
 import Marquee from "react-fast-marquee";
 import MouseGlow from './components/mouse/mouseglow';
@@ -144,7 +144,6 @@ const StickyHeader = () => {
 };
 
 
-
 const BannerReel = () => {
   const handleScrollToWeAre = () => {
     const weAreSection = document.getElementById('WeAre');
@@ -180,14 +179,30 @@ const BannerReel = () => {
   );
 };
 
+const BannerPhoto = () => {
+  return (
+    <main className="w-screen">
+      <div className="w-screen h-auto">
+        <Image
+          src="/photos/long-banner.png"
+          alt="Banner Photo"
+          width={"4000px"}
+          height={"400px"}
+        />
+      </div>
+    </main>
+  );
+};
+
+
 const WeAre = () => {
   const [showFullText, setShowFullText] = useState(false);
 
   return (
-    <main id="WeAre" className="flex-col w-screen md:pr-11">
+    <main id="WeAre" className="flex-col w-screen pt-52 md:pr-11">
       <div>
         <div
-          className="font-bold text-7xl lg:text-8xl font-mono px-64 md:px-64 pt-24 md:pt-16 mt-4 text-center pb-12"
+          className="font-bold text-7xl lg:text-8xl font-Monteserrat px-64 md:px-64 pt-24 md:pt-16 mt-4 text-center pb-64"
         >
           We Are <br></br>
           BRGR JOINT
@@ -221,10 +236,9 @@ const WeAre = () => {
   );
 };
 
-
 const VideoPortfolio = () => {
   return (
-    <div id="VideoPortfolio" className="w-full bg-white flex-col justify-center select-none md:pb-64">
+    <div id="VideoPortfolio" className="w-full bg-white flex-col justify-center select-none md:pb-72">
       <div>
         <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">World Vision Rwanda | Travel Doc</text>
         <div className="flex h-full items-center select-none px-4 pt-2 md:px-32">
@@ -294,7 +308,7 @@ const VideoPortfolio = () => {
         </div>
       </div>
 
-      <div className="pt-32 sm:pt-48 md:pb-44 lg:pb-2">
+      <div className="pt-32 sm:pt-48">
         <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Las Vegas Pop Rapper | Music Video</text>
         <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
           <div className="text-black opacity-5 font-bold text-5xl xl:text-9xl w-full h-full">
@@ -321,47 +335,6 @@ const VideoPortfolio = () => {
     </div>
   );
 };
-
-const ServicesSection = () => {
-  return (
-    <main id="ServicesSection" className="bg-peach flex-col w-2/3 md:pr-11">
-      <div>
-        <div className="font-bold text-7xl lg:text-8xl font-mono pr-4 pl-4 md:pl-44 pt-24 md:pt-16 mt-4 text-left md:text-left pb-12">
-          We Are <br />
-          BRGR JOINT
-          <span className="text-xs md:text-base lg:text-lg marquee text-left md:text-left font-normal mb-4">
-            A full-service production house that specializes in empowering those who empower.
-            At BRGR JOINT Productions,
-            we specialize in giving a voice to those who specialize in empowering others.
-            With a strong expertise in schools, universities, non-profits, and churches,
-            our lenses were made to capture the essence of your mission, vision, and message.
-          </span>
-        </div>
-      </div>
-    </main >
-  );
-};
-
-const DopeStuff = () => (
-  <section id="DopeStuff" className="flex bg-white sm:pt-64 md:items-start pb-24 ">
-    <div className="justify-center pl-12 z-0">
-      <video autoPlay loop muted className="md:w-2xl xl:w-4xl md:overflow-y-auto sm:rounded-3xl md:rounded-2xl md:w-auto">
-        <source rel="preload" src={"../videos/gallery1.mp4"} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    < div className="md:z-0 md:pr-12 md:py-10 md:overflow-hidden md:sticky translate-y-24 md:top-0 md:w-full" >
-      <h2 className="font-bold md:text-9xl md:py-2 md:w-full md:text-left md:pl-32 md:z-10">
-        WE <span className="text-blue-500"> CREATE </span><br></br>REALLY<span className="text-blue-500"> DOPE </span><br></br>STUFF.</h2>
-      <a href="/contact" className="block bg-blue-500 hover:bg-gray-500 w-60 text-white text-xl translate-x-44 font-bold py-3 px-1 rounded-2xl text-center">
-        Chat With Us
-      </a>
-    </div >
-
-  </section >
-);
-
-
 
 const BenefitsGrid = () => {
   const features = [
@@ -398,17 +371,86 @@ const BenefitsGrid = () => {
   ];
 
   return (
-    <div id="Benefits" className="grid w-full px-64 pt-32 grid-cols-3 gap-4 text-center font-monteserat">
-      {features.map((feature, index) => (
-        <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
-          {feature.icon}
-          <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
-          <p className="mt-2 font text-gray-700">{feature.text}</p>
-        </div>
-      ))}
+    <div id="Benefits" className="flex flex-col items-center justify-center w-full px-24 pt-32 pb-32 font-monteserat">
+      <h1 className="text-center text-8xl font-bold mb-24">Membership Benefits</h1>
+      <div className="grid grid-cols-3 gap-4">
+        {features.map((feature, index) => (
+          <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
+            <span className="text-blue-500">{feature.icon}</span> {/* Apply blue color */}
+            <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
+            <p className="mt-2 text-gray-700">{feature.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
+
+const TiersSection = () => {
+  return (
+    <div id="services" className="bg-peach py-10">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-semibold text-center mb-6">
+          Video Production Pricing - VideoFresh
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white shadow p-8 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">Basic Package</h3>
+            <p className="text-gray-600 mb-4">
+              Our basic package offers essential video production services to get
+              you started.
+            </p>
+            <p className="text-lg font-semibold mb-4">$499</p>
+            <button className="bg-blue-500 text-white py-2 px-4 rounded-full">
+              Get Started
+            </button>
+          </div>
+          <div className="bg-white shadow p-8 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">Standard Package</h3>
+            <p className="text-gray-600 mb-4">
+              Our standard package includes more features and customization options.
+            </p>
+            <p className="text-lg font-semibold mb-4">$799</p>
+            <button className="bg-blue-500 text-white py-2 px-4 rounded-full">
+              Get Started
+            </button>
+          </div>
+          <div className="bg-white shadow p-8 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">Premium Package</h3>
+            <p className="text-gray-600 mb-4">
+              The premium package offers top-tier video production with all the
+              bells and whistles.
+            </p>
+            <p className="text-lg font-semibold mb-4">$1199</p>
+            <button className="bg-blue-500 text-white py-2 px-4 rounded-full">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DopeStuff = () => (
+  <section id="DopeStuff" className="flex bg-white sm:pt-64 md:items-start pb-24 ">
+    <div className="justify-center pl-12 z-0">
+      <video autoPlay loop muted className="md:w-2xl xl:w-4xl md:overflow-y-auto sm:rounded-3xl md:rounded-2xl md:w-auto">
+        <source rel="preload" src={"../videos/gallery1.mp4"} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    < div className="md:z-0 md:pr-12 md:py-10 md:overflow-hidden md:sticky translate-y-24 md:top-0 md:w-full" >
+      <h2 className="font-bold md:text-9xl md:py-2 md:w-full md:text-left md:pl-32 md:z-10">
+        WE <span className="text-blue-500"> CREATE </span><br></br>REALLY<span className="text-blue-500"> DOPE </span><br></br>STUFF.</h2>
+      <a href="/contact" className="block bg-blue-500 hover:bg-gray-500 w-60 text-white text-xl translate-x-44 font-bold py-3 px-1 rounded-2xl text-center">
+        Chat With Us
+      </a>
+    </div >
+
+  </section >
+);
+
 
 const Perfection = () => (
   <section id="Perfection" className="bg-white flex md:items-start pb-24 pt-52 overflow-x-none">
@@ -431,8 +473,17 @@ const Perfection = () => (
 
 
 const FaqSection = () => (
-  <div>  <h2 className="text-8xl font-bold font-Montserrat">FAQs</h2>
+  <div id="FaqSection">
     < MDBContainer className="mt-5 font-Montserrat pb-12" style={{ maxWidth: '1000px' }}>
+      <MDBTypography
+        tag="h3"
+        className="text-center mb-4 pb-2 text-9xl text-primary fw-bold"
+      >
+        FAQs
+      </MDBTypography>
+      <p className="text-center mb-5">
+        Find the answers for the most frequently asked questions below
+      </p>
       <MDBAccordion alwaysOpen initialActive={1} flush>
         <style>
           {`
@@ -522,28 +573,6 @@ const OnStageSection = () => (
   </section>
 );
 
-const LetsConnect = () => (
-
-  <footer className=" ease-in-out duration-300 bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-    <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" className="hover:underline">Flowbite™</a>. All Rights Reserved.
-    </span>
-    <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-      <li>
-        <a href="#" className="mr-4 hover:underline md:mr-6">About</a>
-      </li>
-      <li>
-        <a href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-      </li>
-      <li>
-        <a href="#" className="mr-4 hover:underline md:mr-6">Licensing</a>
-      </li>
-      <li>
-        <a href="#" className="hover:underline">Contact</a>
-      </li>
-    </ul>
-  </footer>
-
-);
 
 const FooterNav = () => {
   const scrollToSection = (sectionId) => {
@@ -554,32 +583,28 @@ const FooterNav = () => {
   };
 
   return (
-    <footer className="fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-1/3 p-2 bg-white mx-auto rounded-2xl shadow-2xl">
+    <footer className="fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-1/3 p-2 bg-primary text-white mx-auto rounded-2xl shadow-2xl">
       <div className="flex justify-center text-md ">
-        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('WeAre')}>
-          We Are
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('ProductOffering')}>
+          Our Concept
         </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('VideoPortfolio')}>
-          Our Highlights
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('VideoPortfolio')}>
+          Our Work
         </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('Benefits')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('Benefits')}>
           Benefits
         </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('ServicesSection')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('services')}>
           Services
         </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('Perfection')}>
-          Perfection
-        </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-black hover:text-white rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('FaqSection')}>
+
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('FaqSection')}>
           FAQs
         </button>
       </div>
     </footer >
   );
 };
-
-
 
 export default function Home() {
   const [showFooter, setShowFooter] = useState(false);
@@ -604,14 +629,16 @@ export default function Home() {
           <BannerReel />
         </main >
         <main className="select-none bg-white">
+          <BannerPhoto />
           <WeAre />
           <VideoPortfolio />
         </main>
       </main>
-      <main className=" select-none">
-        <ServicesSection />
-        <DopeStuff />
+      <main className=" select-none bg-white">
         <BenefitsGrid />
+
+        <DopeStuff />
+        <TiersSection />
         <Perfection />
         <FaqSection />
       </main>

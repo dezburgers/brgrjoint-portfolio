@@ -32,7 +32,7 @@ module.exports = {
         '256': '64rem',
       },
       colors: {
-        peach: '#FBE8DE',
+        peach: '#f8e2d7',
       },
     },
   },
