@@ -12,6 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import Marquee from "react-fast-marquee";
 import MouseGlow from './components/mouse/mouseglow';
+import MouseGlowBio from './components/mouse/biography/mouseglowbio';
 import { useSpring, animated, config } from 'react-spring';
 import icon from "../public/icon.png"
 import onstage from "../public/onstage.png"
@@ -181,7 +182,7 @@ const BannerReel = () => {
 
 const BannerPhoto = () => {
   return (
-    <main className="w-screen">
+    <main className="bg-peach w-screen">
       <div className="w-screen h-auto">
         <Image
           src="/photos/long-banner.png"
@@ -195,14 +196,70 @@ const BannerPhoto = () => {
 };
 
 
-const WeAre = () => {
-  const [showFullText, setShowFullText] = useState(false);
+const PricingSection = () => {
+  const tiers = [
+    { name: 'Flex', features: ['Feature 1', 'Feature 2'], audience: 'Small Businesses', price: '$10/month' },
+    { name: 'Standard', features: ['Feature 1', 'Feature 2', 'Feature 3'], audience: 'Medium Businesses', price: '$20/month' },
+    { name: 'Pro', features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4'], audience: 'Enterprise', price: '$50/month' },
+  ];
+
+  const [activeTier, setActiveTier] = useState(null);
+
+  const handleBubbleInteraction = (tierName) => {
+    if (activeTier === tierName) {
+      setActiveTier(null);
+    } else {
+      setActiveTier(tierName);
+    }
+  };
 
   return (
-    <main id="WeAre" className="flex-col w-screen pt-52 md:pr-11">
+    <div className="bg-gray-100 py-16 font-Montserrat">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex justify-center mb-8 space-x-4">
+          {tiers.map((tier) => (
+            <div
+              key={tier.name}
+              className={`flex items-center justify-center px-8 py-6 rounded-full cursor-pointer bg-white text-gray-700 hover:bg-blue-500 hover:text-white transition-colors`}
+              onMouseEnter={() => handleBubbleInteraction(tier.name)}
+              onMouseLeave={() => handleBubbleInteraction(null)}
+            >
+              {tier.name}
+            </div>
+          ))}
+        </div>
+
+        {activeTier && (
+          <div className="p-4 bg-white rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4">{activeTier} Tier</h2>
+            <div className="grid gap-4">
+              {tiers.find((tier) => tier.name === activeTier).features.map((feature, index) => (
+                <div key={index} className="flex items-center">
+                  <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{feature}</span>
+                </div>
+              ))}
+              <p className="text-gray-600">Best for: {tiers.find((tier) => tier.name === activeTier).audience}</p>
+              <p className="text-gray-600">Price: {tiers.find((tier) => tier.name === activeTier).price}</p>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+
+const WeAre = () => {
+  const [showFullText, setShowFullText] = useState(false);
+  return (
+    <main id="WeAre" className="bg-peach flex-col w-screen pt-12 md:pr-11">
+
       <div>
         <div
-          className="font-bold text-7xl lg:text-8xl font-Monteserrat px-64 md:px-64 pt-24 md:pt-16 mt-4 text-center pb-64"
+          className="font-bold text-7xl lg:text-8xl font-Monteserrat px-64 md:px-64 pt-24 md:pt-16 mt-4 text-center pb-44"
         >
           We Are <br></br>
           BRGR JOINT
@@ -235,6 +292,7 @@ const WeAre = () => {
     </main>
   );
 };
+
 
 const VideoPortfolio = () => {
   return (
@@ -335,6 +393,7 @@ const VideoPortfolio = () => {
     </div>
   );
 };
+
 
 const BenefitsGrid = () => {
   const features = [
@@ -453,16 +512,16 @@ const DopeStuff = () => (
 
 
 const Perfection = () => (
-  <section id="Perfection" className="bg-white flex md:items-start pb-24 pt-52 overflow-x-none">
+  <section id="Perfection" className="bg-white flex md:items-start w-full pb-96 pt-72 overflow-x-none">
     <div className="z-0 w-full top-0 sticky overflow-hidden">
-      <h2 className="font-bold md:text-9xl lg:text-10xl md:py-4 md:w-full md:text-left pl-40 z-10">
+      <h2 className="font-bold md:text-6xl lg:text-8xl xl:text-9xl md:py-4 md:w-full md:text-left pl-40 z-10 break-all	">
         PERFECTION <br></br><span className="text-blue-500"> IS OUR </span><br></br>LOVE<span className="text-blue-500"><br></br> LANGUAGE </span>
       </h2>
       <a href="/contact" className="block bg-blue-500 hover:bg-gray-500 w-72 text-white text-2xl translate-x-44 font-bold py-4 px-2 rounded-3xl text-center">
         Chat With Us
       </a>
     </div>
-    <div className="justify-center pl-12 pr-24 z-0">
+    <div className="justify-center pl-8 pr-48 z-0">
       <video autoPlay loop muted className="md:overflow-y-auto md:rounded-3xl md:w-full">
         <source rel="preload" src={"../videos/bts1.mp4"} type="video/mp4" />
         Your browser does not support the video tag.
@@ -585,20 +644,20 @@ const FooterNav = () => {
   return (
     <footer className="fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-1/3 p-2 bg-primary text-white mx-auto rounded-2xl shadow-2xl">
       <div className="flex justify-center text-md ">
-        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('ProductOffering')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-3" onClick={() => scrollToSection('ProductOffering')}>
           Our Concept
         </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('VideoPortfolio')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-3" onClick={() => scrollToSection('VideoPortfolio')}>
           Our Work
         </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('Benefits')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-3" onClick={() => scrollToSection('Benefits')}>
           Benefits
         </button>
-        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('services')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-3" onClick={() => scrollToSection('services')}>
           Services
         </button>
 
-        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-1" onClick={() => scrollToSection('FaqSection')}>
+        <button style={{ borderRadius: "50%", }} className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-3" onClick={() => scrollToSection('FaqSection')}>
           FAQs
         </button>
       </div>
@@ -628,7 +687,7 @@ export default function Home() {
         <main className=" cursor-none ">
           <BannerReel />
         </main >
-        <main className="select-none bg-white">
+        <main className="select-none">
           <BannerPhoto />
           <WeAre />
           <VideoPortfolio />
@@ -636,7 +695,6 @@ export default function Home() {
       </main>
       <main className=" select-none bg-white">
         <BenefitsGrid />
-
         <DopeStuff />
         <TiersSection />
         <Perfection />
