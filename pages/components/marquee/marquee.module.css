@@ -1,0 +1,42 @@
+.marquee-container {
+    width: 100%;
+    /* Set the desired width */
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-content {
+    display: flex;
+}
+
+.scroll-left .marquee-content {
+    animation: marquee-scroll-left 20s linear infinite;
+}
+
+.scroll-right .marquee-content {
+    animation: marquee-scroll-right 20s linear infinite;
+}
+
+@keyframes marquee-scroll-left {
+    0% {
+        transform: translateX(100%);
+        /* Start from the right side */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* Move to the left side */
+    }
+}
+
+@keyframes marquee-scroll-right {
+    0% {
+        transform: translateX(-100%);
+        /* Start from the left side */
+    }
+
+    100% {
+        transform: translateX(100%);
+        /* Move to the right side */
+    }
+}

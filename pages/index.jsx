@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { v4 as uuidv4 } from 'uuid';
+import "pages/components/marquee/marquee.module.css"
 
 import {
   MDBContainer,
@@ -159,6 +159,7 @@ const BannerReel = () => {
 
   return (
     <main className="h-screen w-screen overflow-x-hidden">
+
       <div className="absolute -z-30">
         <button onClick={handleScrollToWeAre}>
           <video autoPlay loop muted className="object-cover -translate-y-28"
@@ -173,7 +174,7 @@ const BannerReel = () => {
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </video>  </button>
+          </video> </button>
         <div className="z-50">
           <MouseGlow /></div>
       </div>
@@ -182,141 +183,37 @@ const BannerReel = () => {
 };
 
 
-
-
-const ScopeofWork = () => (
-  <main className="bg-blue-500 w-screen h-screen overflow-hidden p-4">
-    <div className="w-4/5 h-screen absolute left-52 right-52 ">
-      <h1 className="mx-50 text-white font-Montserrat text-6xl font-bold pb-12 pt-8">Scope of Our Work</h1><div className="h-4/5 text-2xl border-8 border-white text-white bg-blue-500 rounded-lg grid grid-cols-3 grid-rows-5 gap-4 pt-12 pl-52 font-Montserrat shadow-lg font-bold">
-        {[
-          'Commercials',
-          'Event Videography',
-          'Event Photography',
-          'Social Media Graphics',
-          'Sermon Clips',
-          'Podcast Editing',
-          'LED Wall Graphics',
-          'Intro Bumpers',
-          'Podcast Clips',
-          'Church Service Recap',
-          'Event Highlight Reel Recap',
-          'Digital Ads',
-          'Brochures',
-          'Event Flyers',
-          'Concert Photography',
-        ].map(item => (
-          <p key={item} style={{ position: 'relative' }}>
-            {item}
-            <span
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: '2em', // Adjust this value to move the underline up
-                width: '80%',
-                height: '.2em',
-                backgroundColor: 'white',
-                borderRadius: '30%',
-                opacity: 1,
-              }}
-            ></span>
-          </p>
-        ))}
-      </div>
-    </div>
-  </main >
-);
-
-const PricingSection = () => {
-  const tiers = [
-    { name: 'Flex', features: ['Feature 1', 'Feature 2'], audience: 'Small Businesses', price: '$10/month' },
-    { name: 'Standard', features: ['Feature 1', 'Feature 2', 'Feature 3'], audience: 'Medium Businesses', price: '$20/month' },
-    { name: 'Pro', features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4'], audience: 'Enterprise', price: '$50/month' },
+const WeAre = () => {
+  const features = [
+    {
+      icon: <i className="fas fa-users fa-4x"></i>,
+      title: 'Specialists',
+      text: 'Subscribe to a plan & request as many designs as you like.',
+    },
+    {
+      icon: <i className="fas fa-rocket fa-4x"></i>,
+      title: 'Super Duper Fast',
+      text: 'Subscribe to a plan & request as many designs as you like.',
+    },
+    {
+      icon: <i className="fas fa-medal fa-4x"></i>,
+      title: 'Top-Flight Quality',
+      text: 'Experience unparalleled excellence available whenever you need it.',
+    },
   ];
-
-  const [activeTier, setActiveTier] = useState(null);
-
-  const handleBubbleInteraction = (tierName) => {
-    if (activeTier === tierName) {
-      setActiveTier(null);
-    } else {
-      setActiveTier(tierName);
-    }
-  };
-
   return (
-    <div className="bg-gray-100 py-16 font-Montserrat">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex justify-center mb-8 space-x-4">
-          {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className={`flex items-center justify-center px-8 py-6 rounded-full cursor-pointer bg-white text-gray-700 hover:bg-blue-500 hover:text-white transition-colors`}
-              onMouseEnter={() => handleBubbleInteraction(tier.name)}
-              onMouseLeave={() => handleBubbleInteraction(null)}
-            >
-              {tier.name}
+    <main id="WeAre" className="bg-white flex-col w-screen pt-6 md:pr-11 pb-36">
+      <p className="font-bold text-4xl lg:text-6xl font-Montserrat px-96 md:px-96 pt-24 md:pt-16 mt-4 text-center">CONTENT ON YOUR TERMS</p>
+      <p className="font-light text-xl lg:text-2xl font-Montserrat px-128 text-center ">We take what's happening inside of your organization and help you share it with the world.</p>
+      <div id="Benefits" className="flex flex-col items-center justify-center w-full px-64 pt-2 pb-2 font-Montserrat">
+        <div className="grid grid-cols-3 gap-4">
+          {features.map((feature, index) => (
+            <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
+              <span className="text-blue-500">{feature.icon}</span>
+              <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
+              <p className="mt-2 text-gray-700">{feature.text}</p>
             </div>
           ))}
-        </div>
-
-        {activeTier && (
-          <div className="p-4 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4">{activeTier} Tier</h2>
-            <div className="grid gap-4">
-              {tiers.find((tier) => tier.name === activeTier).features.map((feature, index) => (
-                <div key={index} className="flex items-center">
-                  <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{feature}</span>
-                </div>
-              ))}
-              <p className="text-gray-600">Best for: {tiers.find((tier) => tier.name === activeTier).audience}</p>
-              <p className="text-gray-600">Price: {tiers.find((tier) => tier.name === activeTier).price}</p>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-
-const WeAre = () => {
-  const [showFullText, setShowFullText] = useState(false);
-  return (
-    <main id="WeAre" className="bg-white flex-col w-screen pt-32 md:pr-11">
-
-      <div>
-        <div
-          className="font-bold text-7xl lg:text-8xl font-Monteserrat px-64 md:px-64 pt-24 md:pt-16 mt-4 text-center pb-44"
-        >
-          We Are <br></br>
-          BRGR JOINT
-          <span
-            onMouseEnter={() => setShowFullText(true)}
-            onMouseLeave={() => setShowFullText(false)}
-            className={`pt-12 text-xs ease-in-out duration-300 md:text-base lg:text-xl marquee text-center font-normal mb-4 ${showFullText ? 'block' : 'hidden'
-              }`}
-          >
-            {showFullText ? (
-              <>
-                BRGR JOINT Productions is a dynamic production house headquartered in Las Vegas and San Diego. We amplify the voices of those who empower through compelling visual and auditory storytelling.
-
-                Specializing in capturing the essence of impactful institutions and serving renowned figures and organizations, our portfolio spans photography, videography, sound design, and graphic arts, all rooted in faith, dedication, education, and prosperity.
-
-                From live events to commercials and graphics, our passion shines through. While based in Las Vegas and San Diego, our influence extends globally.
-
-                Guided by faith, influence, servitude, and abundance, we're in a constant journey of evolution.
-
-                Our services cover video, sound, music, and graphic design – transforming dreams into reality.
-
-                At BRGR JOINT Productions, we're storytellers and partners in impactful narratives. Join us in leaving a lasting mark.
-              </>
-            ) : (
-              "A full-service production house that helps those who help others. We specialize in giving a voice to those who specialize in empowering others. With expertise in schools, universities, non-profits, and churches, our lenses were made to capture the essence of your mission, vision, and message."
-            )}
-          </span>
         </div>
       </div>
     </main>
@@ -325,23 +222,22 @@ const WeAre = () => {
 
 
 const VideoPortfolio = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const darkModeThreshold = 1800; // Set the scroll position where you want to activate dark mode
-      const isPastThreshold = window.scrollY > darkModeThreshold;
-      setIsDarkMode(isPastThreshold);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
-    <div id="VideoPortfolio" className={`w-full ${isDarkMode ? 'bg-gray-900' : 'bg-white'} flex-col justify-center select-none md:pb-72`}>
+    <div id="VideoPortfolio" className="bg-peach -translate-y-12 flex-col justify-center select-none md:pb-96">
+      <div className="bg-peach flex-col w-screen md:pr-11 pt-16 pb-8">
+        <h1 className="font-bold text-7xl lg:text-8xl text-black font-Montserrat text-center ">OUR WORK</h1>
+        <h2 className="font-light text-xl lg:text-3xl text-black font-Montserrat text-center ">Creative. Unique. Fast. Dope.</h2>
+        <h3 className="font-light text-xl lg:text-2xl text-black font-Montserrat text-center pt-4  ">
+          <button className="bg-blue-500 p-24 text-center font-bold text-white py-6 rounded-5 hover:-translate-y-4 hover:scale-105 ease-in-out duration-300"
+            style={{
+              boxShadow: '8px 3px 0px 2px rgba(0, 0, 0, 0.8)',
+              hover: 'none',
+            }}>
+            View All Work
+          </button></h3>
+      </div>
       <div>
         <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">World Vision Rwanda | Travel Doc</text>
         <div className="flex h-full items-center select-none px-4 pt-2 md:px-32">
@@ -350,14 +246,14 @@ const VideoPortfolio = () => {
             <source src="./videos/africa-tour.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="text-black opacity-5 font-bold text-5xl xl:text-9xl top-0 left-0 w-full h-full">
+          <div className="text-white hover:opacity-100 opacity-20 font-bold text-5xl xl:text-9xl top-0 left-0 w-full h-full">
             <div className="marquee overflow-hidden ">
-              <Marquee autoFill speed={160} pauseOnHover>
+              <Marquee autoFill speed={160}>
                 World Vision Rwanda &nbsp;
               </Marquee>
             </div>
             <div className="marquee overflow-hidden">
-              <Marquee autoFill direction="right" speed={120} pauseOnHover>
+              <Marquee autoFill direction="right" speed={120}>
                 Travel Documentary &nbsp;
               </Marquee>
             </div>
@@ -368,14 +264,14 @@ const VideoPortfolio = () => {
       <div className="pt-32 sm:pt-8 md:pb-44 lg:pb-2">
         <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Youth Community Center | "Meet Alex"</text>
         <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
-          <div className="text-black opacity-5 font-bold text-5xl xl:text-9xl w-full h-full">
+          <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full h-full">
             <div className="marquee overflow-hidden ">
-              <Marquee autoFill speed={160} pauseOnHover>
+              <Marquee autoFill speed={160} >
                 Youth Community Center &nbsp;
               </Marquee>
             </div>
             <div className="marquee overflow-hidden">
-              <Marquee autoFill direction="right" speed={120} pauseOnHover>
+              <Marquee autoFill direction="right" speed={120} >
                 "Meet Alex" &nbsp;
               </Marquee>
             </div>
@@ -396,14 +292,14 @@ const VideoPortfolio = () => {
             <source src="./videos/bayview-highlight.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="text-black opacity-5 font-bold text-5xl xl:text-9xl top-0 left-0 w-full h-full">
+          <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl top-0 left-0 w-full h-full">
             <div className="marquee overflow-hidden ">
-              <Marquee autoFill speed={160} pauseOnHover>
+              <Marquee autoFill speed={160} >
                 Bayview San Diego &nbsp;
               </Marquee>
             </div>
             <div className="marquee overflow-hidden">
-              <Marquee autoFill direction="right" speed={120} pauseOnHover>
+              <Marquee autoFill direction="right" speed={120} >
                 Social Media &nbsp;
               </Marquee>
             </div>
@@ -414,14 +310,14 @@ const VideoPortfolio = () => {
       <div className="pt-32 sm:pt-48">
         <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Las Vegas Pop Rapper | Music Video</text>
         <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
-          <div className="text-black opacity-5 font-bold text-5xl xl:text-9xl w-full h-full">
+          <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full h-full">
             <div className="marquee overflow-hidden ">
-              <Marquee autoFill speed={160} pauseOnHover>
+              <Marquee autoFill speed={160} >
                 Las Vegas Pop Rapper &nbsp;
               </Marquee>
             </div>
             <div className="marquee overflow-hidden">
-              <Marquee autoFill direction="right" speed={120} pauseOnHover>
+              <Marquee autoFill direction="right" speed={120} >
                 Music Video &nbsp;
               </Marquee>
             </div>
@@ -435,62 +331,11 @@ const VideoPortfolio = () => {
 
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
-
-const BenefitsGrid = () => {
-  const features = [
-    {
-      icon: <i className="fas fa-users fa-4x"></i>,
-      title: 'Specialists',
-      text: 'We stick to our niche – non-profits, schools, and churches. Our focused experience within these sectors enables us to deliver exceptional results tailored to your unique needs.',
-    },
-    {
-      icon: <i className="fas fa-rocket fa-4x"></i>,
-      title: 'Super Duper Fast',
-      text: 'While project timelines vary, we always deliver your content swiftly without compromising quality.',
-    },
-    {
-      icon: <i className="fas fa-medal fa-4x"></i>,
-      title: 'Top-Flight Quality',
-      text: 'Experience unparalleled excellence available whenever you need it.',
-    },
-    {
-      icon: <i className="fas fa-adjust fa-4x"></i>,
-      title: "We're Flexible",
-      text: 'Tailor your services to match your demands – increase, decrease, pause, or cancel services at any time.',
-    },
-    {
-      icon: <i className="fas fa-layer-group fa-4x"></i>,
-      title: 'Diverse',
-      text: 'We excel in projects of all sizes and can support your needs from start to finish.',
-    },
-    {
-      icon: <i className="fas fa-shield-alt fa-4x"></i>,
-      title: 'Never Share',
-      text: 'Everything we do is for you and you only, and our work never lacks originality.',
-    },
-  ];
-
-  return (
-    <div id="Benefits" className="flex flex-col items-center justify-center w-full px-24 pt-32 pb-32 font-monteserat">
-      <h1 className="text-center text-8xl font-bold mb-24">Membership Benefits</h1>
-      <div className="grid grid-cols-3 gap-4">
-        {features.map((feature, index) => (
-          <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
-            <span className="text-blue-500">{feature.icon}</span> {/* Apply blue color */}
-            <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
-            <p className="mt-2 text-gray-700">{feature.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const TiersSection = () => {
+const Pricing = () => {
   return (
     <div id="services" className="bg-peach py-10">
       <div className="container mx-auto">
@@ -536,8 +381,59 @@ const TiersSection = () => {
   );
 };
 
+const BenefitsGrid = () => {
+  const features = [
+    {
+      icon: <i className="fas fa-users fa-4x"></i>,
+      title: 'Specialists',
+      text: 'We stick to our niche – non-profits, schools, and churches. Our focused experience within these sectors enables us to deliver exceptional results tailored to your unique needs.',
+    },
+    {
+      icon: <i className="fas fa-rocket fa-4x"></i>,
+      title: 'Super Duper Fast',
+      text: 'While project timelines vary, we always deliver your content swiftly without compromising quality.',
+    },
+    {
+      icon: <i className="fas fa-medal fa-4x"></i>,
+      title: 'Top-Flight Quality',
+      text: 'Experience unparalleled excellence available whenever you need it.',
+    },
+    {
+      icon: <i className="fas fa-adjust fa-4x"></i>,
+      title: "We're Flexible",
+      text: 'Tailor your services to match your demands – increase, decrease, pause, or cancel services at any time.',
+    },
+    {
+      icon: <i className="fas fa-layer-group fa-4x"></i>,
+      title: 'Diverse',
+      text: 'We excel in projects of all sizes and can support your needs from start to finish.',
+    },
+    {
+      icon: <i className="fas fa-shield-alt fa-4x"></i>,
+      title: 'Never Share',
+      text: 'Everything we do is for you and you only, and our work never lacks originality.',
+    },
+  ];
+
+  return (
+    <div id="Benefits" className="flex flex-col items-center justify-center w-full px-24 pt-32 pb-2 font-Montserrat">
+      <h1 className="text-center text-8xl font-bold mb-24">Membership Benefits</h1>
+      <div className="grid grid-cols-3 gap-4">
+        {features.map((feature, index) => (
+          <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
+            <span className="text-blue-500">{feature.icon}</span> {/* Apply blue color */}
+            <h3 className="mt-4 text-xl font-bold">{feature.title}</h3>
+            <p className="mt-2 text-gray-700">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
 const DopeStuff = () => (
-  <section id="DopeStuff" className="flex bg-white sm:pt-64 md:items-start pb-24 ">
+  <section id="DopeStuff" className="flex bg-white sm:pt-24 md:items-start pb-24 ">
     <div className="justify-center pl-12 z-0">
       <video autoPlay loop muted className="md:w-2xl xl:w-4xl md:overflow-y-auto sm:rounded-3xl md:rounded-2xl md:w-auto">
         <source rel="preload" src={"../videos/gallery1.mp4"} type="video/mp4" />
@@ -555,14 +451,55 @@ const DopeStuff = () => (
   </section >
 );
 
+const ScopeofWork = () => (
+  <main className="bg-blue-500 w-full h-screen overflow-hidden p-4">
+    <div className="w-4/5 h-screen absolute left-52 right-52 ">
+      <h1 className="mx-50 text-white font-Montserrat text-6xl font-bold pb-12 pt-8">What do we do?</h1><div className="h-4/5 text-2xl border-8 border-white text-white bg-blue-500 rounded-lg grid grid-cols-3 grid-rows-5 gap-4 pt-12 pl-52 font-Montserrat shadow-lg font-bold">
+        {[
+          'Commercials',
+          'Event Videography',
+          'Event Photography',
+          'Social Media Graphics',
+          'Sermon Clips',
+          'Podcast Editing',
+          'LED Wall Graphics',
+          'Intro Bumpers',
+          'Podcast Clips',
+          'Church Service Recap',
+          'Event Highlight Reel Recap',
+          'Digital Ads',
+          'Brochures',
+          'Event Flyers',
+          'Concert Photography',
+        ].map(item => (
+          <p key={item} style={{ position: 'relative' }}>
+            {item}
+            <span
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: '2em', // Adjust this value to move the underline up
+                width: '80%',
+                height: '.2em',
+                backgroundColor: 'white',
+                borderRadius: '30%',
+                opacity: 1,
+              }}
+            ></span>
+          </p>
+        ))}
+      </div>
+    </div>
+  </main >
+);
 
 const Perfection = () => (
-  <section id="Perfection" className="bg-white flex md:items-start w-full pb-96 pt-72 overflow-x-none">
+  <section id="Perfection" className="bg-blue-500 flex md:items-start w-full pb-24 pt-12 overflow-x-none">
     <div className="z-0 w-full top-0 sticky overflow-hidden">
-      <h2 className="font-bold md:text-6xl lg:text-8xl xl:text-9xl md:py-4 md:w-full md:text-left pl-40 z-10 break-all	">
-        PERFECTION <br></br><span className="text-blue-500"> IS OUR </span><br></br>LOVE<span className="text-blue-500"><br></br> LANGUAGE </span>
+      <h2 className="font-bold md:text-6xl lg:text-8xl xl:text-9xl md:py-4 md:w-full md:text-left pl-40 z-10 break-all	text-peach ">
+        PERFECTION <br></br><span className="text-white"> IS OUR </span><br></br>LOVE<span className="text-white"><br></br> LANGUAGE </span>
       </h2>
-      <a href="/contact" className="block bg-blue-500 hover:bg-gray-500 w-72 text-white text-2xl translate-x-44 font-bold py-4 px-2 rounded-3xl text-center">
+      <a href="/contact" className="block bg-white hover:bg-blue-800 w-72 text-black hover:text-peach text-2xl translate-x-44 font-bold py-4 px-2 rounded-3xl text-center">
         Chat With Us
       </a>
     </div>
@@ -734,17 +671,17 @@ export default function Home() {
         </main >
         <main className="select-none">
 
-          <ScopeofWork />
           <WeAre />
-
           <VideoPortfolio />
         </main>
       </main>
       <main className=" select-none bg-white">
         <BenefitsGrid />
         <DopeStuff />
-        <TiersSection />
+        <ScopeofWork />
         <Perfection />
+        <Pricing />
+
         <FaqSection />
       </main>
       <main>
