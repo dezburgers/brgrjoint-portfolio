@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { v4 as uuidv4 } from 'uuid';
 
 import {
   MDBContainer,
@@ -180,21 +181,50 @@ const BannerReel = () => {
   );
 };
 
-const BannerPhoto = () => {
-  return (
-    <main className="bg-peach w-screen">
-      <div className="w-screen h-auto">
-        <Image
-          src="/photos/long-banner.png"
-          alt="Banner Photo"
-          width={"4000px"}
-          height={"400px"}
-        />
-      </div>
-    </main>
-  );
-};
 
+
+
+const ScopeofWork = () => (
+  <main className="bg-blue-500 w-screen h-screen overflow-hidden p-4">
+    <div className="w-4/5 h-screen absolute left-52 right-52 ">
+      <h1 className="mx-50 text-white font-Montserrat text-6xl font-bold pb-12 pt-8">Scope of Our Work</h1><div className="h-4/5 text-2xl border-8 border-white text-white bg-blue-500 rounded-lg grid grid-cols-3 grid-rows-5 gap-4 pt-12 pl-52 font-Montserrat shadow-lg font-bold">
+        {[
+          'Commercials',
+          'Event Videography',
+          'Event Photography',
+          'Social Media Graphics',
+          'Sermon Clips',
+          'Podcast Editing',
+          'LED Wall Graphics',
+          'Intro Bumpers',
+          'Podcast Clips',
+          'Church Service Recap',
+          'Event Highlight Reel Recap',
+          'Digital Ads',
+          'Brochures',
+          'Event Flyers',
+          'Concert Photography',
+        ].map(item => (
+          <p key={item} style={{ position: 'relative' }}>
+            {item}
+            <span
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: '2em', // Adjust this value to move the underline up
+                width: '80%',
+                height: '.2em',
+                backgroundColor: 'white',
+                borderRadius: '30%',
+                opacity: 1,
+              }}
+            ></span>
+          </p>
+        ))}
+      </div>
+    </div>
+  </main >
+);
 
 const PricingSection = () => {
   const tiers = [
@@ -255,7 +285,7 @@ const PricingSection = () => {
 const WeAre = () => {
   const [showFullText, setShowFullText] = useState(false);
   return (
-    <main id="WeAre" className="bg-peach flex-col w-screen pt-12 md:pr-11">
+    <main id="WeAre" className="bg-white flex-col w-screen pt-32 md:pr-11">
 
       <div>
         <div
@@ -295,8 +325,23 @@ const WeAre = () => {
 
 
 const VideoPortfolio = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const darkModeThreshold = 1800; // Set the scroll position where you want to activate dark mode
+      const isPastThreshold = window.scrollY > darkModeThreshold;
+      setIsDarkMode(isPastThreshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div id="VideoPortfolio" className="w-full bg-white flex-col justify-center select-none md:pb-72">
+    <div id="VideoPortfolio" className={`w-full ${isDarkMode ? 'bg-gray-900' : 'bg-white'} flex-col justify-center select-none md:pb-72`}>
       <div>
         <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">World Vision Rwanda | Travel Doc</text>
         <div className="flex h-full items-center select-none px-4 pt-2 md:px-32">
@@ -688,8 +733,10 @@ export default function Home() {
           <BannerReel />
         </main >
         <main className="select-none">
-          <BannerPhoto />
+
+          <ScopeofWork />
           <WeAre />
+
           <VideoPortfolio />
         </main>
       </main>
