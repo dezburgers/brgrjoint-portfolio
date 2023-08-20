@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+BRGR JOINT Productions 🎬🍔
+Welcome to BRGR JOINT Productions! We're a full-service production company based in Las Vegas, specializing in creating captivating content for non-profits, schools, churches, and more.
 
-## Getting Started
+Table of Contents 📚
+SplashScreen
+StickyHeader
+BannerReel
+WeAre
+VideoPortfolio
+Pricing
+BenefitsGrid
+DopeStuff
+ScopeofWork
+Perfection
+FaqSection
+SplashScreen 🌟
+A dynamic splash screen animation to engage your audience when they first visit your website.
 
-First, run the development server:
+StickyHeader 📌
+A navigation header that sticks to the top, making it easy for users to navigate between different sections of your website.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+BannerReel 🎥
+A visually appealing banner reel that captures attention and encourages users to explore further.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+WeAre 🌍
+Discover what BRGR JOINT Productions is all about. Learn about our services, including full-service production, social media management, and video editing.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+VideoPortfolio 🎥🌟
+Explore our impressive video portfolio showcasing a variety of projects, from travel documentaries to music videos.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Pricing 💰
+Check out our flexible pricing plans that cater to different content creation needs. Choose from Short Form Essentials, Long Form Essentials, or the Combo Package.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+BenefitsGrid 🌈
+Learn about the benefits of choosing BRGR JOINT Productions. From specialists in our niche to top-flight quality and flexibility, we've got you covered.
 
-## Learn More
+DopeStuff 🚀
+Discover the amazing work we create. Our "DopeStuff" section showcases our creativity and expertise in video production.
 
-To learn more about Next.js, take a look at the following resources:
+ScopeofWork 📋
+Explore the extensive range of services we offer, from commercials and event videography to podcast editing and digital ads.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Perfection 💎
+Experience perfection through our visually stunning video content. Learn more about our commitment to delivering high-quality work.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+FaqSection ❓
+Find answers to frequently asked questions about our services, turnaround time, expertise, and more.
 
-## Deploy on Vercel
+Contact Us 📞
+Ready to collaborate with us or have questions? Contact us today!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to explore our website and reach out to us for any inquiries. We're excited to bring your creative visions to life!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+📍 Based in Las Vegas & San Diego🎉

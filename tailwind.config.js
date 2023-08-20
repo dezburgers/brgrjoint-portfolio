@@ -33,6 +33,8 @@ module.exports = {
       },
       colors: {
         peach: '#f8e2d7',
+        darkpeach: '#FF6F61',
+        offblack: '#111',
       },
     },
   },
