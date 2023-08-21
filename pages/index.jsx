@@ -4,6 +4,12 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faInstagram, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+import logosm from "../public/logosm.png"
+
 import "pages/components/marquee/marquee.module.css"
 
 import {
@@ -467,11 +473,12 @@ const Perfection = () => (
 
 const PricingTab = ({ planName, price, planDescription, features, stripeLink }) => (
   <div id="pricing" className="h-full pb-24">
+    {/* Styling based on planName */}
     <div
       className="relative flex flex-col h-full p-6 pt-14 border-4 border-slate-200 rounded-3xl shadow-white shadow-2xl"
       style={{
         background:
-          planName === 'Short Form Essentials'
+          planName === 'Social Media Essentials'
             ? '#FF6F61'
             : planName === 'Long Form Essentials'
               ? '#2196F3'
@@ -483,17 +490,19 @@ const PricingTab = ({ planName, price, planDescription, features, stripeLink }) 
       }}
     >
       <div className="mb-5">
+        {/* Display planName and price */}
         <div className="text-white text-2xl font-extrabold mb-1">{planName}</div>
         <div className="inline-flex items-baseline mb-2">
           <span className="text-white font-bold text-5xl">$</span>
           <span className="text-white font-bold text-8xl">{price.monthly}</span>
           <span className="text-white font-xl">/mo</span>
         </div>
+        {/* Display planDescription and 'Get Started' link */}
         <div className="text-sm text-white mb-5">{planDescription}</div>
         <div className="xl:px-12">
           <a
             className="w-1/3 inline-flex justify-center font-Montserrat whitespace-nowrap rounded-2xl bg-white border-white 
-          border-xl px-32 py-2.5 text-3xl text-blue-500 no-underline font-bold hover:scale-105 hover:text-black transition-all shadow-2xl ease-in-out duration-500"
+          border-xl px-32 py-2.5 text-3xl text-blue-500 no-underline font-bold hover:scale-105 hover:text-black transition-all shadow-lg hover:shadow-2xl ease-in-out duration-500"
             href={stripeLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -502,11 +511,13 @@ const PricingTab = ({ planName, price, planDescription, features, stripeLink }) 
           </a>
         </div>
       </div>
+      {/* Display features */}
       <div className="rounded-lg bg-white bg-opacity-20 p-4">
         <div className="text-black font-extrabold mb-3">Includes:</div>
         <ul className="text-white text-sm space-y-3">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
+              {/* Checkmark icon */}
               <svg
                 className="w-3 h-3 fill-blue-500 mr-3"
                 viewBox="0 0 12 12"
@@ -514,6 +525,7 @@ const PricingTab = ({ planName, price, planDescription, features, stripeLink }) 
               >
                 <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
               </svg>
+              {/* Display feature */}
               <span className="text-black font-semibold text-md">{feature}</span>
             </li>
           ))}
@@ -527,6 +539,7 @@ const Pricing = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
   useEffect(() => {
+    // Scroll percentage calculation
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -535,7 +548,10 @@ const Pricing = () => {
       setScrollPercentage(newScrollPercentage);
     };
 
+    // Add scroll event listener
     window.addEventListener('scroll', handleScroll);
+
+    // Remove event listener on cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -543,25 +559,26 @@ const Pricing = () => {
 
   return (
     <div className="bg-offblack">
+      {/* Title and description */}
       <p className="text-white font-bold text-4xl lg:text-6xl font-Montserrat px-96 pt-16 md:pt-24 text-center">Our Pricing Options</p>
       <p className="text-white font-light text-xl lg:text-3xl font-Montserrat px-96 md:pt-4 pb-14 text-center">We have affordable packages for every situation</p>
+      {/* Pricing tabs */}
       <div className="text-white font-Montserrat max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-7xl px-6">
-
+        {/* PricingTab components for different plans */}
         <PricingTab
           planName="Combo Package"
-          price={{ monthly: 1999 }}
-          planDescription="Ideal for growing content creators, podcasters, and YouTubers that are looking to grow their reach in the quickest way possible."
+          price={{ monthly: 2249 }}
+          planDescription="Ideal for business owners, event planners, concert promoters, and creatives needing commercials or photo/video work."
           features={[
-            'Everything in the Short Form Essentials',
-            'Everything in the Long Form Essentials',
-            'Unlimited Revisions',
+            'Everything included in social media essentials.',
+            'Everything included in long form essentials.',
           ]}
           stripeLink="STRIPE_LINK_COMBO_PACKAGE"
         />
 
         <PricingTab
-          planName="Short Form Essentials"
-          price={{ monthly: 799 }}
+          planName="Social Media Essentials"
+          price={{ monthly: 899 }}
           planDescription="Ideal for vertical sermon highlights, talking heads, short podcast clips, real estate tours, and quick updates."
           features={[
             'up to 7 vertical videos a week',
@@ -569,14 +586,14 @@ const Pricing = () => {
             'Final video under 90 seconds',
             'Up to 1080p RAW footage provided by you.',
             'Spell checked captions.',
+            'We post all content for you, stuff we make and your own (optional).',
             'Unlimited Revisions.',
           ]}
-          stripeLink="STRIPE_LINK_SHORT_FORM_ESSENTIALS"
+          stripeLink="https://buy.stripe.com/fZe29258J72s17q288"
         />
-
         <PricingTab
           planName="Long Form Essentials"
-          price={{ monthly: 1499 }}
+          price={{ monthly: 1699 }}
           planDescription="Ideal for vloggers, short interviews, commentary, live streamers, financial & educational YouTube creators."
           features={[
             '2 weekly videos',
@@ -585,7 +602,7 @@ const Pricing = () => {
             'Perfect for diving into details and presentations',
             'Unlimited Revisions',
           ]}
-          stripeLink="STRIPE_LINK_LONG_FORM_ESSENTIALS"
+          stripeLink="https://buy.stripe.com/4gwcNGat35Yo3fy7st"
         />
       </div>
     </div>
@@ -594,7 +611,7 @@ const Pricing = () => {
 
 const FaqSection = () => (
   <div id="FaqSection">
-    < MDBContainer className="mt-5 font-Montserrat pb-12" style={{ maxWidth: '1000px' }}>
+    < MDBContainer className="mt-5 font-Montserrat pb-12" style={{ maxWidth: '80em' }}>
       <MDBTypography
         tag="h3"
         className="text-center mb-4 pb-2 text-9xl text-primary fw-bold"
@@ -659,7 +676,10 @@ const FaqSection = () => (
           We've got a skilled team for every project – no matter the size. Our network covers all bases.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={10} headerTitle="Gear check, what equipment do you use?">
-          Think Blackmagic Pocket Cinemas, Canon EOS Rs, Canon M50mkii, Canon 24-105mm, Tamron 24-70, and Rokinon Cin-E Lenses and all around top-notch gear ready to roll.
+          Think Blackmagic Pocket Cinemas, Canon EOS Rs, Canon M50mkii, Canon 24-105mm, Tamron 24-70, and Rokinon Cin-E Lenses, Mac Studio Pros, Newest Macbook Pros and all around top-notch gear ready to roll.
+        </MDBAccordionItem>
+        <MDBAccordionItem collapseId={11} headerTitle="How about software, though?">
+          We are masters in all major softwares like Davinici Resolve, Premiere Pro, Final Cut Pro, After Effects, Photoshop, Illustrator, and more.
         </MDBAccordionItem>
       </MDBAccordion>
     </MDBContainer >
@@ -695,12 +715,12 @@ const OnStageSection = () => {
       <p className="font-light text-lg lg:text-xl pb-2 font-Montserrat px-80 text-center">We take your mission and vision and translate it into pixels to be shared with the world.</p>
       <div className="grid grid-cols-2 gap-4 md:px-20"> {/* Updated grid class */}
         <div className="flex items-center justify-center w-full lg:px-44 xl:px-44 pt-2 pb-2 font-Montserrat"> {/* Adjusted width */}
-          <div className="grid grid-rows-3 xl:gap-2">
+          <div className="grid">
             {features.map((feature, index) => (
-              <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
+              <div key={index} className="flex flex-col items-center bg-white rounded-lg">
                 <span className="text-blue-500">{feature.icon}</span>
-                <h3 className="mt-1 xl:text-2xl font-bold">{feature.title}</h3>
-                <p className="mt-1 xl:text-lg text-black">{feature.text}</p>
+                <h3 className="mt-1 lg:text-md xl:text-2xl font-bold">{feature.title}</h3>
+                <p className="mt-1 lg:text-sm xl:text-lg text-black">{feature.text}</p>
               </div>
             ))}
           </div>
@@ -727,7 +747,7 @@ const FooterNav = () => {
   };
 
   return (
-    <footer className="fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-full sm:w-1/2 md:w-1/2 p-2 bg-primary text-white mx-auto rounded-2xl shadow-2xl ">
+    <footer className="fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-full sm:w-1/2 md:w-1/2 xl:w-2/5 p-2 bg-primary text-white mx-auto rounded-2xl shadow-2xl drop-shadow-lg ">
       <div className="flex justify-center text-md px-4">
         <button
           style={{ borderRadius: "50%" }}
@@ -766,6 +786,24 @@ const FooterNav = () => {
         </button>
       </div>
     </footer>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div className="h-screen bg-black">
+      <main className="bg-black flex-col w-screen pt-6 md:pr-11 pb-24 font-Montserrat">
+        <p className="font-bold text-white text-4xl lg:text-6xl font-Montserrat md:px-72 pt-24 md:pt-16 mt-4 text-center animate-bounce">Find Out If We Are What You Need</p>
+        <p className="font-light text-white text-2xl lg:text-3xl font-Montserrat md:px-72 mt text-center">
+          Get a guided tour through our services & find out how we can propel your growth trajectory.</p>
+        <div className="flex flex-col items-center justify-center w-full lg:px-44 xl:px-44 pt-12 pb-2 ">
+          <div className="delay-[15ms] hover:-translate-y-16 ease-in duration-[425ms] hover:shadow-white">
+            <button className="border-8 hover:bg-darkpeach text-white text-4xl font-bold py-14 px-96 rounded-[4rem] mt-8 shadow-2xl hover:scale-110 delay-[15ms] hover:-translate-y-16 ease-in-out duration-[425ms] hover:shadow-white">Get Started</button>
+          </div>
+          <Image src={logosm} className="h-32 w-32" />
+        </div>
+      </main>
+    </div>
   );
 };
 
@@ -810,6 +848,7 @@ export default function Home() {
           <FaqSection />
         </main>
         <main className="overflow-x-hidden">
+          <Footer />
         </main >
         <SplashScreen />
         <div style={{ opacity: showFooter ? 1 : 0, transition: 'opacity .5s ease-in-out' }}>
