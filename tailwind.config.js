@@ -35,6 +35,7 @@ module.exports = {
         peach: '#f8e2d7',
         darkpeach: '#FF6F61',
         offblack: '#111',
+        bluewash: '#9999ff',
       },
     },
   },

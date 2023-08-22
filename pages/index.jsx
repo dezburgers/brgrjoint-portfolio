@@ -5,10 +5,12 @@ import Image from "next/image";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faInstagram, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faInstagram, faEnvelope, faPhone, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import logosm from "../public/logosm.png"
+import logo from "../public/logoblue.png"
+import smsnippet from "public/photos/social media.png"
 
 import "pages/components/marquee/marquee.module.css"
 
@@ -23,6 +25,15 @@ import MouseGlowBio from './components/mouse/biography/mouseglowbio';
 import { useSpring, animated, config } from 'react-spring';
 import icon from "../public/icon.png"
 import onstage from "../public/onstage.png"
+import wallspic from "public/photos/wallspic.JPG"
+import tishpic from "public/photos/tishpic.JPG"
+import hezpic from "public/photos/hezpic.JPG"
+import kelpic from "public/photos/kelpic.JPG"
+import police from "public/photos/police.jpg"
+import donald from "public/photos/donald.jpg"
+import keion from "public/photos/keion.jpeg"
+import worship from "public/photos/worship.JPG"
+import trackmeet from "public/photos/trackmeet.jpg"
 
 
 const SplashScreen = () => {
@@ -76,98 +87,21 @@ const SplashScreen = () => {
             className="text-2xl font-semibold mb-2 w-24 h-auto"
             style={{ ...logoSpinProps }}
           >
-
             <Image src={icon} alt="Logo" />
           </animated.h1>
         </animated.div >
       </animated.div >
     </animated.main>
-
-  );
-};
-
-const StickyHeader = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <header className="fixed top-0 left-0 w-full p-4 bg-opacity-80 backdrop-blur backdrop-filter bg-gray-200">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center">
-          <div
-            className={`w-8 h-8 mr-2 md:hidden cursor-pointer ${menuOpen ? 'opacity-100' : 'opacity-50'
-              }`}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <Image src={icon} alt="Icon" layout="fill" />
-          </div>
-          <div className="hidden md:block">
-            <Image src={icon} alt="Icon" className="w-6 h-6 mr-2" />
-          </div>
-        </div>
-
-        <div className="hidden md:flex">
-          <a href="/about" className="mr-4 text-gray-600 hover:text-gray-800">
-            About
-          </a>
-          <a href="/contact" className="text-gray-600 hover:text-gray-800">
-            Contact
-          </a>
-        </div>
-
-        <div className="md:hidden">
-          <button
-            className="text-gray-600 hover:text-gray-800 focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4 6H20M4 12H20M4 18H20"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {menuOpen && (
-        <div className="mt-4 md:hidden">
-          <a href="/about" className="block mb-2 text-gray-600 hover:text-gray-800">
-            About
-          </a>
-          <a href="/contact" className="block text-gray-600 hover:text-gray-800">
-            Contact
-          </a>
-        </div>
-      )}
-    </header>
   );
 };
 
 
 const BannerReel = () => {
-  const handleScrollToWeAre = () => {
-    const weAreSection = document.getElementById('WeAre');
-    if (weAreSection) {
-      window.scrollTo({
-        top: weAreSection.offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
-    <main className="h-screen w-screen">
-
-      <div className="absolute -z-30">
-        <button onClick={handleScrollToWeAre}>
+    <a href='#OurConcept'>
+      <main className="h-screen w-screen cursor-none">
+        <div className="absolute -z-30">
           <video autoPlay loop muted className="object-cover -translate-y-28"
             style={{
               marginBottom: "5em",
@@ -180,11 +114,14 @@ const BannerReel = () => {
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </video> </button>
-        <div className="z-50">
-          <MouseGlow /></div>
-      </div>
-    </main >
+          </video> <div className="w-full mix-blend-overlay"><div className="fixed pl-32 w-1/4"> <Image src={logo} />
+          </div>
+          </div>
+          <div className="z-50">
+            <MouseGlow /></div>
+        </div >
+      </main >
+    </a>
   );
 };
 
@@ -207,10 +144,10 @@ const OurConcept = () => {
     },
   ];
   return (
-    <main id="OurConcept" className="bg-white flex-col w-screen pt-6 md:pr-11 pb-24">
-      <p className="font-bold text-4xl lg:text-6xl font-Montserrat md:px-72 pt-24 md:pt-16 mt-4 text-center">CONTENT ON YOUR TERMS</p>
-      <p className="font-light text-xl lg:text-2xl font-Montserrat px-80 text-center ">We take your mission and vision and translate it into pixels to be shared with the world.</p>
-      <div className="flex flex-col items-center justify-center w-full lg:px-44 xl:px-44 pt-2 pb-2 font-Montserrat">
+    <main id="OurConcept" className="bg-white flex-col w-screen pt-6 md:pr-11 ">
+      <p className="font-bold text-4xl lg:text-6xl font-Montserrat md:px-72 pt-24 md:pt-16 mt-4 pb-6 text-center">CONTENT ON YOUR TERMS</p>
+      <p className="font-light text-xl lg:text-2xl pb-12 font-Montserrat px-80 text-center ">We take your mission and vision and translate it into pixels to be shared with the world.</p>
+      <div className="flex flex-col items-center justify-center w-full lg:px-44 xl:px-44 pb-2 font-Montserrat">
         <div className="grid grid-cols-3 gap-4">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col items-center p-4 bg-white rounded-lg">
@@ -221,32 +158,77 @@ const OurConcept = () => {
           ))}
         </div>
       </div>
+      <h3 className="font-light text-xl lg:text-2xl text-black font-Montserrat pt-4 pb-12 text-center">
+        <a href="#pricing"> <button className="bg-blue-500 p-24 text-center font-bold text-white py-6 rounded-5 hover:-translate-y-4 hover:scale-105 ease-in-out duration-700"
+          style={{
+            boxShadow: '8px 3px 0px 2px rgba(0, 0, 0, 0.8)',
+            hover: 'none',
+          }}>
+          Find The Right Plan For You
+        </button></a>  </h3>
+      <Marquee className="bg-peach transition-all duration-1000 hover:bg-bluewash " autoFill speed={30}>
+        <div class=" grid grid-cols-9 w-screen gap-4 py-6 px-2 ">
+          <Image src={tishpic} className="rounded-3xl" ></Image>
+          <Image src={hezpic} className="rounded-3xl"></Image>
+          <Image src={wallspic} className="rounded-3xl"></Image>
+          <Image src={kelpic} className="rounded-3xl"></Image>
+          <Image src={police} className="rounded-3xl"></Image>
+          <Image src={worship} className="rounded-3xl"></Image>
+          <Image src={keion} className="rounded-3xl"></Image>
+          <Image src={donald} className="rounded-3xl"></Image>
+          <Image src={trackmeet} className="rounded-3xl"></Image>
+        </div>
+      </Marquee>
     </main>
   );
 };
 
+const Timeline = () => {
+  return (
+    <main>
+      <div className="relative flex justify-center items-center h-fit bg-bluewash py-32 shadow-2xl shadow-white">
+        <div className="w-7/12">
+          <h1 className="justify-center text-center font-Montserrat font-extrabold text-7xl">Its Simple.</h1>
+          <h2 className="justify-center text-center font-Montserrat font-normal text-2xl pb-8">You don't have to pay a senior level creative to get senior level creations.</h2>
+          <div className="grid grid-cols-3 font-Montserrat text-black">
+            <div className="flex flex-col items-center">
+              <i className="far fa-comment-dots fa-4x  mb-4"></i>
+              <div className="text-center text-black px-4 font-normal">Subscribe to a plan & submit as many requests as you want</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <i className="far fa-clock fa-4x  mb-4"></i>
+              <div className="text-center text-black px-4 font-normal">
+                Receive your files as fast as 48 hours (varies by project)
+              </div>
+            </div>
+            <div className="flex flex-col items-center">
+              <i className="fas fa-paper-plane fa-4x  mb-4"></i>
+              <div className="text-center text-black px-4 font-normal">
+                We’ll make revisions until you're 100% satisfied
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main >
+  );
+};
 
 const VideoPortfolio = () => {
   return (
     <div id="VideoPortfolio" className="bg-peach flex-col justify-center select-none md:pb-96">
-      <div className="bg-peach flex-col w-screen md:pr-11 pt-16 pb-8">
+      <div className="bg-peach flex-col w-screen md:pr-11 pt-24 pb-8">
         <h1 className="font-bold text-7xl lg:text-8xl text-black font-Montserrat text-center ">OUR WORK</h1>
         <h2 className="font-light text-xl lg:text-3xl text-black font-Montserrat text-center ">Creative. Unique. Fast. Dope.</h2>
-        <h3 className="font-light text-xl lg:text-2xl text-black font-Montserrat text-center pt-4  ">
-          <button className="bg-blue-500 p-24 text-center font-bold text-white py-6 rounded-5 hover:-translate-y-4 hover:scale-105 ease-in-out duration-700"
-            style={{
-              boxShadow: '8px 3px 0px 2px rgba(0, 0, 0, 0.8)',
-              hover: 'none',
-            }}>
-            View All Work
-          </button></h3>
+
       </div>
 
       <div>
         <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">World Vision Rwanda | Travel Doc</text>
         <div className="flex h-full items-center select-none px-4 pt-2 md:px-32">
           <video muted autoPlay loop
-            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 rounded-3xl z-10 hover:drop-shadow-5xl" preload="auto">
+            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 rounded-3xl z-10 shadow-blue-500 shadow-2xl hover:shadow-purple-500 hover:shadow-0 0 75px 75px rgba(0, 0, 0, 1);" preload="auto">
             <source src="./videos/africa-tour.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -281,7 +263,7 @@ const VideoPortfolio = () => {
             </div>
           </div>
           <video muted autoPlay loop
-            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 absolute right-8 rounded-3xl z-10 hover:drop-shadow-5xl" preload="auto">
+            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 absolute right-8 rounded-3xl z-10 shadow-blue-500 shadow-2xl hover:shadow-purple-500 hover:shadow-0 0 75px 75px rgba(0, 0, 0, 1);" preload="auto">
             <source src="./videos/tb-ent.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -292,7 +274,7 @@ const VideoPortfolio = () => {
         <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">Bayview San Diego | Social Media </text>
         <div className="flex h-full items-center select-none px-4 pt-2 md:px-32">
           <video muted autoPlay loop
-            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 rounded-3xl z-10 hover:drop-shadow-5xl" preload="auto">
+            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 rounded-3xl z-10 shadow-blue-500 shadow-2xl hover:shadow-purple-500 hover:shadow-0 0 75px 75px rgba(0, 0, 0, 1);" preload="auto">
             <source src="./videos/bayview-highlight.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -327,7 +309,7 @@ const VideoPortfolio = () => {
             </div>
           </div>
           <video muted autoPlay loop
-            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 absolute right-7 rounded-3xl z-10 hover:drop-shadow-5xl" preload="auto">
+            className="hover:scale-105 ease-in-out duration-700 w-4/5 md:w-1/2 absolute right-7 rounded-3xl z-10 shadow-blue-500 shadow-2xl hover:shadow-purple-500 hover:shadow-0 0 75px 75px rgba(0, 0, 0, 1);" preload="auto">
             <source src="./videos/music-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -408,55 +390,90 @@ const DopeStuff = () => (
   </section >
 );
 
-const ScopeofWork = () => (
-  <main className="bg-peach h-screen overflow-hidden p-4 ">
-    <main id="ScopeofWork" className="bg-peach flex-col w-screen">
-      <p className="font-bold text-blue-500 text-4xl lg:text-6xl font-Montserrat px-96 pt-24 md:pt-6 mt-4 text-center">Scope of Our Work</p></main>
-    <div className="w-4/5 h-screen absolute left-52 right-52 ">
-      <div className="h-3/5 text-xl xl:text-2xl border-8 border-primary text-white bg-darkpeach rounded-lg grid grid-cols-3 grid-rows-5 gap-4 pt-12 px-14 font-Montserrat shadow-lg font-bold">
-        {[
-          'Commercials',
-          'Event Videography',
-          'Event Photography',
-          'Social Media Graphics',
-          'Sermon Clips',
-          'Podcast Editing',
-          'LED Wall Graphics',
-          'Intro Bumpers',
-          'Podcast Clips',
-          'Church Service Recap',
-          'Event Recap Reel',
-          'Digital Ads',
-          'Brochures',
-          'Event Flyers',
-          'Concert Photography',
-        ].map(item => (
-          <p key={item} style={{ position: 'relative' }}>
-            {item}
-            <span
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: '2em', // Adjust this value to move the underline up
-                width: '80%',
-                height: '.2em',
-                backgroundColor: 'white',
-                borderRadius: '30%',
-                opacity: 1,
-              }}
-            ></span>
-          </p>
-        ))}
+const Pastors = () => {
+  return (
+    <div id="pastors" className="flex flex-col bg-bluewash items-center justify-center w-full py-52  font-Montserrat">
+      <h1 className=" text-6xl font-black text-white">Pastors. Preachers. Ministers.</h1>
+      <h2 className="w-1/3 text-center text-3xl font-light text-white pb-8">We love Jesus, too! <br />Our social media packages were made with you in mind.</h2>
+
+      <div className="flex">
+        <div className="w-1/2 px-4 text-center">
+          <div className="mb-8 pl-72">
+            <h1 className="font-bold mb-2 text-white text-left text-xl">Repurpose Your Messages</h1>
+            <h2 className=" text-sm font-mono text-left text-white">Your sermons and messages deserve to live more than once. With our
+              <a className="no-underline text-blue-200 italic hover:text-blue-500 transition-all duration-100" href='#pricing'>
+                &nbsp;social media essentials </a>
+              package, we can post a clip from your sermon every single day of the week, keeping your audience engaged.</h2>
+          </div>
+          <div className="mb-8 pl-72">
+            <h1 className="text-xl text-left text-white font-bold mb-2">Promote Your Events</h1>
+            <h2 className="text-sm font-mono text-left text-white">With our  <a className="no-underline text-blue-200 italic hover:text-blue-500 transition-all duration-100" href='#pricing'>
+              &nbsp;social media essentials </a>, you can receive an unlimited number of graphics that are social media ready.</h2>
+          </div>
+          <div className="mb-8 pl-72">
+            <h1 className="text-xl text-left text-white font-bold mb-2">Grow Your Presence</h1>
+            <h2 className="text-sm font-mono text-left text-white">If you think you have a message that needs to be heard, then you need a team that commits to building your platform. </h2>
+          </div>
+        </div>
+        <div className="w-1/3 p-4 pt-14">
+          <Image className="rounded-3xl" src={smsnippet} />
+        </div>
       </div>
     </div>
+  );
+};
+
+const ScopeofWork = () => (
+  <main className="bg-white h-screen overflow-hidden p-4 ">
+    <main id="ScopeofWork" className=" ">
+      <p className="sticky flex-col w-screen font-bold text-blue-500 text-4xl lg:text-6xl font-Montserrat px-96 pt-24 md:pt-6 mt-4 text-center">Scope of Our Work</p>
+      <div className="w-4/5 h-screen absolute left-52 right-52 ">
+        <div className="h-3/5 text-xl xl:text-2xl border-8 border-primary text-white bg-blue-500 rounded-lg grid grid-cols-3 grid-rows-5 gap-4 pt-12 px-14 font-Montserrat shadow-lg font-bold">
+          {[
+            'Commercials',
+            'Event Videography',
+            'Event Photography',
+            'Social Media Graphics',
+            'Sermon Clips',
+            'Podcast Editing',
+            'LED Wall Graphics',
+            'Intro Bumpers',
+            'Podcast Clips',
+            'Church Service Recap',
+            'Event Recap Reel',
+            'Digital Ads',
+            'Brochures',
+            'Event Flyers',
+            'Concert Photography',
+          ].map(item => (
+            <p key={item} style={{ position: 'relative' }}>
+              {item}
+              <span
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '2em', // Adjust this value to move the underline up
+                  width: '80%',
+                  height: '.2em',
+                  backgroundColor: 'white',
+                  borderRadius: '30%',
+                  opacity: 1,
+                }}
+              ></span>
+            </p>
+          ))}
+        </div>
+
+      </div>
+    </main>
   </main >
 );
 
 const Perfection = () => (
   <section id="Perfection" className="bg-blue-500 flex md:items-start w-full pb-24 pt-12">
     <div className="z-0 w-full top-0 sticky overflow-hidden">
-      <h2 className="font-bold md:text-6xl lg:text-6xl xl:text-8xl md:py-4 md:w-full md:text-left pl-40 z-10 break-all	text-black ">
-        PERFECTION <br></br><span className="text-white"> IS OUR </span><br></br>LOVE<span className="text-white"><br></br> LANGUAGE </span>
+      <h2 className="font-bold md:text-6xl lg:text-6xl xl:text-8xl md:py-4 md:w-full md:text-left pl-40 z-10 break-all	text-white ">
+        PERFECTION <br></br><span className="text-peach"> IS OUR </span><br></br>LOVE<span className="text-peach"><br></br> LANGUAGE </span>
       </h2>
       <a href="/contact" className="block bg-white hover:bg-blue-800 hover:scale-105 w-72 text-black hover:text-peach text-2xl translate-x-44 font-bold py-4 px-2 rounded-3xl text-center">
         Chat With Us
@@ -587,6 +604,7 @@ const Pricing = () => {
             'Up to 1080p RAW footage provided by you.',
             'Spell checked captions.',
             'We post all content for you, stuff we make and your own (optional).',
+            'Unlimited Graphics',
             'Unlimited Revisions.',
           ]}
           stripeLink="https://buy.stripe.com/fZe29258J72s17q288"
@@ -600,6 +618,7 @@ const Pricing = () => {
             'You provide up to 1080p quality',
             'Each video up to 10 minutes long',
             'Perfect for diving into details and presentations',
+            'Unlimited Graphics',
             'Unlimited Revisions',
           ]}
           stripeLink="https://buy.stripe.com/4gwcNGat35Yo3fy7st"
@@ -747,38 +766,52 @@ const FooterNav = () => {
   };
 
   return (
-    <footer className="fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-full sm:w-1/2 md:w-1/2 xl:w-2/5 p-2 bg-primary text-white mx-auto rounded-2xl shadow-2xl drop-shadow-lg ">
-      <div className="flex justify-center text-md px-4">
+    <footer className="hover:bg-black hover:shadow-2xl hover:shadow-purple-600 border-blue-500 transition-all duration-700  fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-full sm:w-1/2 md:w-1/2 xl:w-[43%] p-2 bg-blue-500 text-white mx-auto rounded-2xl shadow-white shadow-2xl drop-shadow-lg ">
+      <div className="flex justify-center text-sm px-4">
         <button
-          style={{ borderRadius: "50%" }}
+          style={{ borderRadius: "30%", padding: '.05em' }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
           onClick={() => scrollToSection('OurConcept')}
         >
           Our Concept
         </button>
         <button
-          style={{ borderRadius: "50%" }}
+          style={{ borderRadius: "30%", padding: '.05em' }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
           onClick={() => scrollToSection('VideoPortfolio')}
         >
           Our Work
         </button>
         <button
-          style={{ borderRadius: "50%" }}
+          style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
           onClick={() => scrollToSection('Benefits')}
         >
           Benefits
         </button>
         <button
-          style={{ borderRadius: "50%" }}
+          style={{ borderRadius: "30%" }}
+          className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
+          onClick={() => scrollToSection('pastors')}
+        >
+          Pastors
+        </button>
+        <button
+          style={{ borderRadius: "30%" }}
+          className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
+          onClick={() => scrollToSection('ScopeofWork')}
+        >
+          Scope of Work
+        </button>
+        <button
+          style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
           onClick={() => scrollToSection('pricing')}
         >
           Pricing
         </button>
         <button
-          style={{ borderRadius: "50%" }}
+          style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-3"
           onClick={() => scrollToSection('FaqSection')}
         >
@@ -792,15 +825,14 @@ const FooterNav = () => {
 const Footer = () => {
   return (
     <div className="h-screen bg-black">
-      <main className="bg-black flex-col w-screen pt-6 md:pr-11 pb-24 font-Montserrat">
-        <p className="font-bold text-white text-4xl lg:text-6xl font-Montserrat md:px-72 pt-24 md:pt-16 mt-4 text-center animate-bounce">Find Out If We Are What You Need</p>
+      <main className="bg-black flex-col w-screen pt-24 md:pr-11 pb-24 font-Montserrat">
+        <p className="font-bold text-white text-4xl lg:text-6xl font-Montserrat md:px-72 pt-24 md:pt-16 mt-4 text-center ">Find Out If We Are What You Need</p>
         <p className="font-light text-white text-2xl lg:text-3xl font-Montserrat md:px-72 mt text-center">
           Get a guided tour through our services & find out how we can propel your growth trajectory.</p>
         <div className="flex flex-col items-center justify-center w-full lg:px-44 xl:px-44 pt-12 pb-2 ">
           <div className="delay-[15ms] hover:-translate-y-16 ease-in duration-[425ms] hover:shadow-white">
             <button className="border-8 hover:bg-darkpeach text-white text-4xl font-bold py-14 px-96 rounded-[4rem] mt-8 shadow-2xl hover:scale-110 delay-[15ms] hover:-translate-y-16 ease-in-out duration-[425ms] hover:shadow-white">Get Started</button>
           </div>
-          <Image src={logosm} className="h-32 w-32" />
         </div>
       </main>
     </div>
@@ -832,12 +864,14 @@ export default function Home() {
         </main >
         <main className="select-none">
           <OurConcept />
+          <Timeline />
           <VideoPortfolio />
         </main>
       </main>
       <main className=" select-none bg-white">
         <BenefitsGrid />
         <DopeStuff />
+        <Pastors />
         <ScopeofWork />
         <Perfection />
         <Pricing />
