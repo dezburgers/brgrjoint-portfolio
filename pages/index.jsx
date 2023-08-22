@@ -11,6 +11,8 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import logosm from "../public/logosm.png"
 import logo from "../public/logoblue.png"
 import smsnippet from "public/photos/social media.png"
+import donaldPolaroid from "public/grammy-winner.png"
+import pastorke from "public/pastorke.png"
 
 import "pages/components/marquee/marquee.module.css"
 
@@ -114,7 +116,7 @@ const BannerReel = () => {
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </video> <div className="w-full mix-blend-overlay"><div className="fixed pl-32 w-1/4"> <Image src={logo} />
+          </video> <div className="w-full mix-blend-overlay"><div className="fixed pl-32 w-1/4">
           </div>
           </div>
           <div className="z-50">
@@ -186,28 +188,39 @@ const OurConcept = () => {
 const Timeline = () => {
   return (
     <main>
-      <div className="relative flex justify-center items-center h-fit bg-bluewash py-32 shadow-2xl shadow-white">
-        <div className="w-7/12">
+      <div className="relative flex justify-center items-center h-fit bg-bluewash py-32 shadow-3xl shadow-white">
+        <div className="w-9/12 text-white">
           <h1 className="justify-center text-center font-Montserrat font-extrabold text-7xl">Its Simple.</h1>
-          <h2 className="justify-center text-center font-Montserrat font-normal text-2xl pb-8">You don't have to pay a senior level creative to get senior level creations.</h2>
-          <div className="grid grid-cols-3 font-Montserrat text-black">
-            <div className="flex flex-col items-center">
-              <i className="far fa-comment-dots fa-4x  mb-4"></i>
-              <div className="text-center text-black px-4 font-normal">Subscribe to a plan & submit as many requests as you want</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <i className="far fa-clock fa-4x  mb-4"></i>
-              <div className="text-center text-black px-4 font-normal">
-                Receive your files as fast as 48 hours (varies by project)
+          <h2 className="justify-center text-center font-Montserrat font-semibold text-2xl pb-8">You don't have to pay a senior level creative to get senior level creations.</h2>
+          <div className="grid grid-cols-2 items-center">
+            <div className="grid grid-rows-2 items-center text-3xl">
+              <div className="grid grid-cols-3 font-Montserrat pr-8 text-xl text-white">
+                <div className="flex flex-col items-center">
+                  <i className="far fa-comment-dots fa-4x  mb-4"></i>
+                  <div className="text-center text-white px-4 font-normal">Subscribe to a plan & submit as many requests as you want</div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <i className="far fa-clock fa-4x  mb-4"></i>
+                  <div className="text-center text-white px-4 font-normal">
+                    Receive your files as fast as 48 hours (varies by project)
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <i className="fas fa-paper-plane fa-4x  mb-4"></i>
+                  <div className="text-center text-white px-4 font-normal">
+                    We’ll make revisions until you're 100% satisfied
+                  </div>
+                </div>
               </div>
+              <a href="#pricing"> <button className="bg-darkpeach hover:bg-[#ba4e45] p-24 text-center font-bold text-white py-6 rounded-5 hover:-translate-y-4 hover:scale-105 ease-in-out duration-700"
+                style={{
+                  boxShadow: '8px 3px 0px 2px rgba(0, 0, 0, 0.8)',
+                  hover: 'none',
+                }}>
+                See Our Affordable Plans
+              </button></a>
             </div>
-            <div className="flex flex-col items-center">
-              <i className="fas fa-paper-plane fa-4x  mb-4"></i>
-              <div className="text-center text-black px-4 font-normal">
-                We’ll make revisions until you're 100% satisfied
-              </div>
-
-            </div>
+            <Image src={pastorke} />
           </div>
         </div>
       </div>
@@ -217,7 +230,7 @@ const Timeline = () => {
 
 const VideoPortfolio = () => {
   return (
-    <div id="VideoPortfolio" className="bg-peach flex-col justify-center select-none md:pb-96">
+    <div id="VideoPortfolio" className="bg-peach flex-col justify-center select-none md:pb-96 overflow-none">
       <div className="bg-peach flex-col w-screen md:pr-11 pt-24 pb-8">
         <h1 className="font-bold text-7xl lg:text-8xl text-black font-Montserrat text-center ">OUR WORK</h1>
         <h2 className="font-light text-xl lg:text-3xl text-black font-Montserrat text-center ">Creative. Unique. Fast. Dope.</h2>
@@ -232,8 +245,8 @@ const VideoPortfolio = () => {
             <source src="./videos/africa-tour.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="text-white hover:opacity-100 opacity-20 font-bold text-5xl xl:text-9xl top-0 left-0 w-full h-full">
-            <div className="marquee">
+          <div className="text-white hover:opacity-100 opacity-20 font-bold text-5xl xl:text-9xl top-0 left-0 w-full h-fit py-2 ">
+            <div className="marquee overflow-hidden">
               <Marquee autoFill speed={160}>
                 World Vision Rwanda &nbsp;
               </Marquee>
@@ -250,13 +263,13 @@ const VideoPortfolio = () => {
       <div className="pt-32 sm:pt-8 md:pb-44 lg:pb-2">
         <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Youth Community Center | "Meet Alex"</text>
         <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
-          <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full h-full">
-            <div className="marquee overflow-hidden ">
+          <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full  h-fit  overflow-hidden -translate-x-24">
+            <div className="marquee overflow-hidden py-2">
               <Marquee autoFill speed={160} >
                 Youth Community Center &nbsp;
               </Marquee>
             </div>
-            <div className="marquee overflow-hidden">
+            <div className="marquee overflow-hidden py-2">
               <Marquee autoFill direction="right" speed={120} >
                 "Meet Alex" &nbsp;
               </Marquee>
@@ -296,7 +309,7 @@ const VideoPortfolio = () => {
       <div className="pt-32 sm:pt-48">
         <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Las Vegas Pop Rapper | Music Video</text>
         <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
-          <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full h-full">
+          <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full h-full -translate-x-24">
             <div className="marquee overflow-hidden ">
               <Marquee autoFill speed={160} >
                 Las Vegas Pop Rapper &nbsp;
@@ -379,12 +392,13 @@ const DopeStuff = () => (
         Your browser does not support the video tag.
       </video>
     </div>
-    < div className="md:z-0 md:pr-12 md:pb-10 md:overflow-hidden md:sticky md:top-0 md:w-full" >
+    < div className="md:z-0 md:pr-12 md:pb-10 md:overflow-hidden md:sticky md:top-0 md:w-full pt-12 font-Montserrat" >
       <h2 className="font-bold text-8xl xl:text-[7rem] md:py-2 md:w-full md:text-left md:pl-32 md:z-10">
         WE <span className="text-blue-500"> CREATE </span><br></br>REALLY<span className="text-blue-500"> DOPE </span><br></br>STUFF.</h2>
-      <a href="/contact" className="block bg-blue-500 hover:bg-gray-500 w-60 text-white text-xl translate-x-44 font-bold py-3 px-1 rounded-2xl text-center">
-        Chat With Us
-      </a>
+      <div className="pl-52 py-12 ">
+        <a href="#pricing" className=" bg-blue-500 hover:bg-peach no-underline  text-white hover:text-black  text-3xl transition-all duration-150 font-bold py-3 px-24 rounded-2xl text-center">
+          Choose Your Plan
+        </a></div>
     </div >
 
   </section >
@@ -394,41 +408,43 @@ const Pastors = () => {
   return (
     <div id="pastors" className="flex flex-col bg-bluewash items-center justify-center w-full py-52  font-Montserrat">
       <h1 className=" text-6xl font-black text-white">Pastors. Preachers. Ministers.</h1>
-      <h2 className="w-1/3 text-center text-3xl font-light text-white pb-8">We love Jesus, too! <br />Our social media packages were made with you in mind.</h2>
+      <h2 className="w-1/2 text-center text-xl text-white pb-8">We love Jesus, too! Our social media packages were made with you in mind.</h2>
 
-      <div className="flex">
-        <div className="w-1/2 px-4 text-center">
-          <div className="mb-8 pl-72">
-            <h1 className="font-bold mb-2 text-white text-left text-xl">Repurpose Your Messages</h1>
-            <h2 className=" text-sm font-mono text-left text-white">Your sermons and messages deserve to live more than once. With our
+      <div className="flex pl-52">
+        <div className="w-1/3 p-4 pt-14">
+          <Image className="rounded-3xl" src={donaldPolaroid} />
+        </div>
+        <div className="w-1/2 px-4 pt-32 text-center">
+          <div className="mb-8 pl-4">
+            <h1 className="font-bold mb-2 text-white text-left text-2xl">Repurpose Your Messages <i class="px-2 fa fa-heart animate-bounce"></i>
+            </h1>
+            <h2 className=" text-base font-mono text-left text-white">Your sermons and messages deserve to live more than once. With our
               <a className="no-underline text-blue-200 italic hover:text-blue-500 transition-all duration-100" href='#pricing'>
                 &nbsp;social media essentials </a>
               package, we can post a clip from your sermon every single day of the week, keeping your audience engaged.</h2>
           </div>
-          <div className="mb-8 pl-72">
-            <h1 className="text-xl text-left text-white font-bold mb-2">Promote Your Events</h1>
-            <h2 className="text-sm font-mono text-left text-white">With our  <a className="no-underline text-blue-200 italic hover:text-blue-500 transition-all duration-100" href='#pricing'>
+          <div className="mb-8 pl-4">
+            <h1 className="text-2xl text-left text-white font-bold mb-2">Promote Your Events <i class="px-2 fa fa-church animate-bounce"></i></h1>
+            <h2 className="text-base font-mono text-left text-white">With our  <a className="no-underline text-blue-200 italic hover:text-blue-500 transition-all duration-100" href='#pricing'>
               &nbsp;social media essentials </a>, you can receive an unlimited number of graphics that are social media ready.</h2>
           </div>
-          <div className="mb-8 pl-72">
-            <h1 className="text-xl text-left text-white font-bold mb-2">Grow Your Presence</h1>
-            <h2 className="text-sm font-mono text-left text-white">If you think you have a message that needs to be heard, then you need a team that commits to building your platform. </h2>
+          <div className="mb-8 pl-4">
+            <h1 className="text-2xl text-left text-white font-bold mb-2">Grow Your Presence<i class="px-2 fa fa-users animate-bounce"></i></h1>
+            <h2 className="text-base font-mono text-left text-white">If you think you have a message that needs to be heard, then you need a team that commits to building your platform. </h2>
           </div>
         </div>
-        <div className="w-1/3 p-4 pt-14">
-          <Image className="rounded-3xl" src={smsnippet} />
-        </div>
+
       </div>
     </div>
   );
 };
 
 const ScopeofWork = () => (
-  <main className="bg-white h-screen overflow-hidden p-4 ">
-    <main id="ScopeofWork" className=" ">
-      <p className="sticky flex-col w-screen font-bold text-blue-500 text-4xl lg:text-6xl font-Montserrat px-96 pt-24 md:pt-6 mt-4 text-center">Scope of Our Work</p>
-      <div className="w-4/5 h-screen absolute left-52 right-52 ">
-        <div className="h-3/5 text-xl xl:text-2xl border-8 border-primary text-white bg-blue-500 rounded-lg grid grid-cols-3 grid-rows-5 gap-4 pt-12 px-14 font-Montserrat shadow-lg font-bold">
+  <main className="bg-peach h-screen overflow-hidden p-12">
+    <main id="ScopeofWork">
+      <p className="sticky flex-col w-screen font-bold text-blue-600 text-4xl lg:text-6xl font-Montserrat px-96 pt-24 md:pt-6 mt-4 text-center">Scope of Our Work</p>
+      <div className="w-4/5 h-screen absolute left-52 right-52 pt-6">
+        <div className="h-3/5 text-xl xl:text-2xl border-8 border-darkpeach text-white bg-blue-600 shadow-darkpeach shadow-2xl rounded-3xl grid grid-cols-3 grid-rows-5 gap-4 pt-12 px-14 font-Montserrat font-bold">
           {[
             'Commercials',
             'Event Videography',
@@ -455,7 +471,7 @@ const ScopeofWork = () => (
                   top: '2em', // Adjust this value to move the underline up
                   width: '80%',
                   height: '.2em',
-                  backgroundColor: 'white',
+                  backgroundColor: '#FF6F61',
                   borderRadius: '30%',
                   opacity: 1,
                 }}
@@ -475,8 +491,8 @@ const Perfection = () => (
       <h2 className="font-bold md:text-6xl lg:text-6xl xl:text-8xl md:py-4 md:w-full md:text-left pl-40 z-10 break-all	text-white ">
         PERFECTION <br></br><span className="text-peach"> IS OUR </span><br></br>LOVE<span className="text-peach"><br></br> LANGUAGE </span>
       </h2>
-      <a href="/contact" className="block bg-white hover:bg-blue-800 hover:scale-105 w-72 text-black hover:text-peach text-2xl translate-x-44 font-bold py-4 px-2 rounded-3xl text-center">
-        Chat With Us
+      <a href="mailto:productions@brgrjoint.org" className="block bg-white hover:bg-blue-800 hover:scale-105 w-72 text-black hover:text-peach text-2xl translate-x-44 font-bold py-4 px-2 rounded-3xl text-center">
+        Shoot Us An Email
       </a>
     </div>
     <div className="justify-center pl-8 pr-48 z-0">
@@ -489,10 +505,10 @@ const Perfection = () => (
 );
 
 const PricingTab = ({ planName, price, planDescription, features, stripeLink }) => (
-  <div id="pricing" className="h-full pb-24">
+  <div className="h-full pb-24">
     {/* Styling based on planName */}
     <div
-      className="relative flex flex-col h-full p-6 pt-14 border-4 border-slate-200 rounded-3xl shadow-white shadow-2xl"
+      className="relative flex flex-col h-full p-6 pt-14 border-4 border-slate-200 rounded-3xl hover:shadow-purple-300 duration-300 shadow-purple-500 shadow-2xl hover:shadow-3xl"
       style={{
         background:
           planName === 'Social Media Essentials'
@@ -575,7 +591,7 @@ const Pricing = () => {
   }, []);
 
   return (
-    <div className="bg-offblack">
+    <div id="pricing" className="bg-offblack">
       {/* Title and description */}
       <p className="text-white font-bold text-4xl lg:text-6xl font-Montserrat px-96 pt-16 md:pt-24 text-center">Our Pricing Options</p>
       <p className="text-white font-light text-xl lg:text-3xl font-Montserrat px-96 md:pt-4 pb-14 text-center">We have affordable packages for every situation</p>
@@ -746,7 +762,7 @@ const OnStageSection = () => {
         </div>
         <div className="flex items-center pt-12 justify-center w-full">
           <Image
-            className="w-40 h-auto"
+            className="w-40 h-auto rounded-3xl"
             src={onstage}
             alt="Onstage"
           />
@@ -758,62 +774,86 @@ const OnStageSection = () => {
 };
 
 const FooterNav = () => {
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId, duration) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const targetPosition = section.getBoundingClientRect().top + window.pageYOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const startTime = performance.now();
+
+      function scrollStep(timestamp) {
+        const currentTime = timestamp || performance.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutSlow(progress); // Custom easing function
+        window.scrollTo(0, startPosition + distance * easedProgress);
+
+        if (progress < 1) {
+          requestAnimationFrame(scrollStep);
+        }
+      }
+
+      // Custom easing function: Slow ease-out
+      function easeOutSlow(t) {
+        return 1 - Math.pow(1 - t, 0.5); // You can adjust the exponent value for different degrees of slowness
+      }
+
+
+
+      requestAnimationFrame(scrollStep);
     }
   };
 
   return (
-    <footer className="hover:bg-black hover:shadow-2xl hover:shadow-purple-600 border-blue-500 transition-all duration-700  fixed z-40 bottom-20 left-10 right-10 font-mono font-bold w-full sm:w-1/2 md:w-1/2 xl:w-[43%] p-2 bg-blue-500 text-white mx-auto rounded-2xl shadow-white shadow-2xl drop-shadow-lg ">
+    <footer className="hover:bg-black hover:shadow-2xl hover:shadow-purple-600 border-blue-500 transition-all duration-700
+    fixed z-40 bottom-20 left-10 right-10 font-Montserrat font-bold w-full sm:w-1/2 md:w-1/2 xl:w-[43%] p-[.7rem] bg-blue-500 text-white
+    mx-auto rounded-full shadow-black shadow-2xl drop-shadow-lg">
       <div className="flex justify-center text-sm px-4">
         <button
           style={{ borderRadius: "30%", padding: '.05em' }}
-          className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
-          onClick={() => scrollToSection('OurConcept')}
-        >
-          Our Concept
-        </button>
+          className="hover:bg-white hover:text-black bg-blue-900 rounded-lg p-1.5 px-3 fa fa-arrow-up fa-lg"
+          onClick={() => scrollToSection('OurConcept', 500)}
+        ></button>
         <button
           style={{ borderRadius: "30%", padding: '.05em' }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
-          onClick={() => scrollToSection('VideoPortfolio')}
+          onClick={() => scrollToSection('VideoPortfolio', 500)}
         >
           Our Work
         </button>
         <button
           style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
-          onClick={() => scrollToSection('Benefits')}
+          onClick={() => scrollToSection('Benefits', 500)}
         >
           Benefits
         </button>
         <button
           style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
-          onClick={() => scrollToSection('pastors')}
+          onClick={() => scrollToSection('pastors', 500)}
         >
           Pastors
         </button>
         <button
           style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
-          onClick={() => scrollToSection('ScopeofWork')}
+          onClick={() => scrollToSection('ScopeofWork', 500)}
         >
           Scope of Work
         </button>
         <button
           style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 px-3"
-          onClick={() => scrollToSection('pricing')}
+          onClick={() => scrollToSection('pricing', 500)}
         >
           Pricing
         </button>
         <button
           style={{ borderRadius: "30%" }}
           className="hover:bg-white hover:text-black rounded-lg p-1.5 mx-3"
-          onClick={() => scrollToSection('FaqSection')}
+          onClick={() => scrollToSection('FaqSection', 500)}
         >
           FAQs
         </button>

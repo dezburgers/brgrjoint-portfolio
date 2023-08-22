@@ -9,7 +9,8 @@ module.exports = {
     extend: {
 
       boxShadow: {
-        '5xl': '0 0 50px 50px rgba(0, 0, 0, 0.9)', // Adjust the values as per your requirements
+        '5xl': '0 0 50px 50px rgba(0, 0, 0, 0.9)',
+        '3xl': '0 10px 20px 20px rgba(0, 0, 0, 0.8)', // Adjust the values as per your requirements
       },
       animation: {
         marquee: 'marquee 20s linear infinite',
@@ -35,7 +36,7 @@ module.exports = {
         peach: '#f8e2d7',
         darkpeach: '#FF6F61',
         offblack: '#111',
-        bluewash: '#9999ff',
+        bluewash: '#9999cc',
       },
     },
   },
