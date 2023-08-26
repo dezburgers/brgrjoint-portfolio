@@ -11,7 +11,7 @@ import pastorke from "public/pastorke.png"
 import "pages/components/marquee/marquee.module.css"
 
 import Marquee from "react-fast-marquee";
-import MouseGlow from './components/mouse/mouseglow';
+import MouseGlow from './components/mouse/mouseglow.tsx';
 import { useSpring, animated, config } from 'react-spring';
 import icon from "../public/icon.png"
 import onstage from "../public/onstage.png"
@@ -904,7 +904,8 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
       </Head>
       <main className="overflow-x-hidden">
-        <main className=" lg:cursor-none ">
+        <main className="cursor-none ">
+          <MouseGlow />
           <BannerReel />
         </main >
         <main className="select-none">
