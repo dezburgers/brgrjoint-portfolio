@@ -905,7 +905,6 @@ export default function Home() {
       </Head>
       <main className="overflow-x-hidden">
         <main className="cursor-none ">
-          <MouseGlow />
           <BannerReel />
         </main >
         <main className="select-none">
