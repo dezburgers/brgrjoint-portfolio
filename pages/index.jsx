@@ -24,7 +24,7 @@ import donald from "public/photos/donald.jpg"
 import keion from "public/photos/keion.jpeg"
 import worship from "public/photos/worship.JPG"
 import trackmeet from "public/photos/trackmeet.jpg"
-import linkbanner from "public/photos/link-banner.png"
+import linkbanner from "public/link-banner.png"
 
 
 const SplashScreen = () => {
