@@ -171,15 +171,15 @@ const OurConcept = () => {
         </button></a>  </h3>
       <Marquee className="bg-peach transition-all duration-1000 hover:bg-bluewash " autoFill speed={30}>
         <div className="grid grid-cols-9 w-screen-150 lg:w-screen gap-4 py-6 px-2">
-          <Image src={tishpic} className="rounded-3xl" ></Image>
-          <Image src={hezpic} className="rounded-3xl"></Image>
-          <Image src={wallspic} className="rounded-3xl"></Image>
-          <Image src={kelpic} className="rounded-3xl"></Image>
-          <Image src={police} className="rounded-3xl"></Image>
-          <Image src={worship} className="rounded-3xl"></Image>
-          <Image src={keion} className="rounded-3xl"></Image>
-          <Image src={donald} className="rounded-3xl"></Image>
-          <Image src={trackmeet} className="rounded-3xl"></Image>
+          <Image src={tishpic} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={hezpic} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={wallspic} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={kelpic} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={police} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={worship} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={keion} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={donald} className="rounded-3xl" alt="portfolio image" ></Image>
+          <Image src={trackmeet} className="rounded-3xl" alt="portfolio image" ></Image>
         </div>
       </Marquee>
     </main>
@@ -192,7 +192,7 @@ const Timeline = () => {
       <div className="relative lg:flex justify-center items-center lg:h-fit bg-bluewash px-4 py-14 lg:pt-16 lg:py-32 lg:shadow-3xl lg:shadow-white">
         <div className="lg:w-9/12 text-white">
           <h1 className="justify-center text-center font-Montserrat font-extrabold text-5xl lg:text-7xl">Its Simple.</h1>
-          <h2 className="justify-center text-center font-Montserrat font-normal lg:font-semibold text-base lg:text-2xl lg:pb-8">You don't have to pay a senior level creative's salar to get senior level creations.</h2>
+          <h2 className="justify-center text-center font-Montserrat font-normal lg:font-semibold text-base lg:text-2xl lg:pb-8">You don&apos;t have to pay a senior level creative&apos;s salary to get senior level creations.</h2>
           <div className="lg:grid lg:grid-cols-2 lg:items-center lg:justify-center pt-8">
             <div className="lg:grid lg:grid-rows-3 lg:grid-cols-2 lg:items-center lg:text-3xl">
               <div className="lg:grid lg:grid-cols-3 font-Montserrat lg:pr-8 lg:text-xl lg:text-white">
@@ -209,7 +209,7 @@ const Timeline = () => {
                 <div className="lg:pb-0 pb-12 flex flex-col items-center">
                   <i className="fas fa-paper-plane fa-3x lg:fa-4x  mb-4"></i>
                   <div className="text-center text-lg px-2 lg:px-4 lg:font-normal">
-                    We’ll make revisions until you're 100% satisfied
+                    We&apos;ll make revisions until you&apos;re 100% satisfied
                   </div>
                 </div>
                 <a href="#pricing">
@@ -225,7 +225,7 @@ const Timeline = () => {
                 </a>
               </div>
             </div>
-            <Image className="" src={pastorke} />
+            <Image className="" alt="Pastor Keion Henderson" src={pastorke} />
           </div>
         </div>
       </div>
@@ -269,7 +269,7 @@ const VideoPortfolio = () => {
         <a href="https://youtube.com/playlist?list=PLECR53T8KBZhfN6bPM0V7q1XmBRSba1MR&si=CcR1kWrLidgSEgvF" target="_blank" rel="noopener noreferrer" className="no-underline ">
 
           <div className="pt-8 lg:pt-4 pb-0 lg:pb-2">
-            <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Youth Community Center | "Meet Alex"</text>
+            <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Youth Community Center | &quot;Meet Alex&quot;</text>
             <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
               <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full  h-fit  overflow-hidden -translate-x-24">
                 <div className="marquee overflow-hidden py-2">
@@ -279,7 +279,7 @@ const VideoPortfolio = () => {
                 </div>
                 <div className="marquee overflow-hidden py-2">
                   <Marquee autoFill direction="right" speed={120} >
-                    "Meet Alex" &nbsp;
+                    &quot;Meet Alex&quot; &nbsp;
                   </Marquee>
                 </div>
               </div>
@@ -430,7 +430,7 @@ const Pastors = () => {
 
       <div className="lg:flex lg:pl-52 px-4 lg:px-0">
         <div className="w-full p-4 lg:w-1/3 lg:p-4 lg:pt-14">
-          <Image className="lg:rounded-3xl" src={donaldPolaroid} />
+          <Image alt="Donald Lawrence" className="lg:rounded-3xl" src={donaldPolaroid} />
         </div>
         <div className="lg:w-1/2 px-3 lg:px-4 lg:pt-32 lg:text-center">
           <div className="pb-4 lg:mb-8 lg:pl-4">
@@ -746,32 +746,32 @@ const FaqSection = () => (
         `}
         </style>
         <MDBAccordionItem collapseId={1} headerTitle="What's the turnaround time look like?">
-          We're on it! You'll get your stuff within just 48 hours.
+          We&apos;re on it! You&apos;ll get your stuff within just 48 hours.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={2} headerTitle="How are you completing it so quickly?">
-          Short answer, because we're skilled! Our expertise makes things happen in a snap. With over leads having over 10 years experience, you're in good hands.
+          Short answer, because we&apos;re skilled! Our expertise makes things happen in a snap. With over leads having over 10 years experience, you&apos;re in good hands.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={3} headerTitle="Why not hire someone full-time, you know?">
-          You've got a point! Hiring a full-timer can come at a hefty cost of over $100,000 a year, plus perks. And finding the perfect fit? That's a journey. Also, why pay for downtime when our monthly plan lets you take a break?
+          You&apos;ve got a point! Hiring a full-timer can come at a hefty cost of over $100,000 a year, plus perks. And finding the perfect fit? That&apos;s a journey. Also, why pay for downtime when our monthly plan lets you take a break?
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={4} headerTitle="What if I'm not connecting with the work?">
-          No worries at all! We'll fine-tune until you're completely satisfied. Your happiness is our priority.
+          No worries at all! We&apos;ll fine-tune until you&apos;re completely satisfied. Your happiness is our priority.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={5} headerTitle="Tell me about this 'pause' option.">
           Life can get hectic, right? Feel free to hit pause if things get a bit overwhelming.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={6} headerTitle="Can I get a refund, though?">
-          Unfortunately, due to our commitment to top-quality work, we can't provide refunds.
+          Unfortunately, due to our commitment to top-quality work, we can&apos;t provide refunds.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={7} headerTitle="So do you need my social media password?">
-          Yes, we need the passwords to whatever account you would like managed. If that still doesn't ease your sould, we can create a fresh account.
+          Yes, we need the passwords to whatever account you would like managed. If that still doesn&apos;t ease your sould, we can create a fresh account.
           You can also take the lead with our standard package and post the content we create on your own terms.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={8} headerTitle="Is my password safe in your hands?">
           Absolutely secure! Our reliable manager is the only one with access to your login details.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={9} headerTitle="So, who's part of your video and photo crew?">
-          We've got a skilled team for every project – no matter the size. Our network covers all bases.
+          We&apos;ve got a skilled team for every project – no matter the size. Our network covers all bases.
         </MDBAccordionItem>
         <MDBAccordionItem collapseId={10} headerTitle="Gear check, what equipment do you use?">
           Think Blackmagic Pocket Cinemas, Canon EOS Rs, Canon M50mkii, Canon 24-105mm, Tamron 24-70, and Rokinon Cin-E Lenses, Mac Studio Pros, Newest Macbook Pros and all around top-notch gear ready to roll.

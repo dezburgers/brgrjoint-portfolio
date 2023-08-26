@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #1a1a1a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      cursor: none;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .error-code {
+      font-size: 4em;
+      margin-bottom: 10px;
+    }
+
+    .error-message {
+      font-size: 1.5em;
+    }
+
+    .home-link {
+      color: #f44336;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .home-link:hover {
+      color: #ff7961;
+    }
+
+    .custom-cursor {
+      width: 30px;
+      height: 30px;
+      background-color: #2196F3;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    <div class="error-message">Oops! Looks like you're lost.</div>
+    <p>Let's get you back <a class="home-link" href="/">home</a>.</p>
+  </div>
+  <div class="custom-cursor"></div>
+  <script>
+    document.addEventListener("mousemove", (event) => {
+      const cursor = document.querySelector(".custom-cursor");
+      cursor.style.left = event.clientX + "px";
+      cursor.style.top = event.clientY + "px";
+    });
+  </script>
+</body>
+
+</html>
