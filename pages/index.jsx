@@ -4,37 +4,25 @@ import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faInstagram, faEnvelope, faPhone, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-import logosm from "../public/logosm.png"
-import logo from "../public/logoblue.png"
-import smsnippet from "public/photos/social media.png"
 import donaldPolaroid from "public/grammy-winner.png"
 import pastorke from "public/pastorke.png"
 
 import "pages/components/marquee/marquee.module.css"
 
-import {
-  MDBContainer,
-  MDBAccordion,
-  MDBAccordionItem, MDBTypography
-} from "mdb-react-ui-kit";
 import Marquee from "react-fast-marquee";
 import MouseGlow from './components/mouse/mouseglow';
-import MouseGlowBio from './components/mouse/biography/mouseglowbio';
 import { useSpring, animated, config } from 'react-spring';
 import icon from "../public/icon.png"
 import onstage from "../public/onstage.png"
-import wallspic from "public/photos/wallspic.JPG"
-import tishpic from "public/photos/tishpic.JPG"
-import hezpic from "public/photos/hezpic.JPG"
-import kelpic from "public/photos/kelpic.JPG"
+import wallspic from "public/photos/wallspic.jpg"
+import tishpic from "public/photos/tishpic.jpg"
+import hezpic from "public/photos/hezpic.jpg"
+import kelpic from "public/photos/kelpic.jpg"
 import police from "public/photos/police.jpg"
 import donald from "public/photos/donald.jpg"
 import keion from "public/photos/keion.jpeg"
-import worship from "public/photos/worship.JPG"
+import worship from "public/photos/worship.jpg"
 import trackmeet from "public/photos/trackmeet.jpg"
 
 
@@ -1014,7 +1002,7 @@ export default function Home() {
       <main>
         <main className=" bg-white select-none overflow-x-hidden">
           <Voice />
-          <FaqSection />
+
         </main>
         <main className="overflow-x-hidden">
           <Footer />
