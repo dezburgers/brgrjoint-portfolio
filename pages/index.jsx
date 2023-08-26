@@ -731,7 +731,7 @@ const FooterNav = () => {
   };
 
   return (
-    <footer className="sm:invisible md:invisible lg:visible hover:bg-black hover:shadow-2xl hover:shadow-purple-600 border-blue-500 transition-all duration-700
+    <footer className="invisible sm:invisible md:invisible lg:visible hover:bg-black hover:shadow-2xl hover:shadow-purple-600 border-blue-500 transition-all duration-700
     fixed z-40 bottom-20 left-10 right-10 font-Montserrat font-bold w-full sm:w-1/2 md:w-1/2 xl:w-[43%] p-[.7rem] bg-blue-500 text-white
     mx-auto rounded-full shadow-black shadow-2xl drop-shadow-lg">
       <div className="flex justify-center text-sm px-4">
