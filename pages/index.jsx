@@ -24,6 +24,7 @@ import donald from "public/photos/donald.jpg"
 import keion from "public/photos/keion.jpeg"
 import worship from "public/photos/worship.JPG"
 import trackmeet from "public/photos/trackmeet.jpg"
+import linkbanner from "public/photos/link-banner.png"
 
 
 const SplashScreen = () => {
@@ -910,6 +911,11 @@ export default function Home() {
       <Head>
         <title>Creativity Done Right | BRGR JOINT Productions</title>
         <meta name="description" content="Taking Creativity To The Next" />
+        <meta property="og:title" content="Creativity Done Right | BRGR JOINT Productions" />
+        <meta property="og:description" content="Taking Creativity To The Next" />
+        <meta property="og:image" content={linkbanner} /> {/* Replace with the actual URL */}
+        <meta property="og:url" content="www.productions.brgrjoint.org" /> {/* Replace with the actual URL */}
+
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
       </Head>
