@@ -901,7 +901,7 @@ export default function Home() {
 
     // Change the title when the component unmounts
     return () => {
-      document.title = "Don't leave this content behind!";
+      document.title = "Where you goin'?";
     };
   }, []);
 
