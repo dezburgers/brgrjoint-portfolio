@@ -913,7 +913,7 @@ export default function Home() {
         <meta name="description" content="Taking Creativity To The Next" />
         <meta property="og:title" content="Creativity Done Right | BRGR JOINT Productions" />
         <meta property="og:description" content="Taking Creativity To The Next" />
-        <meta property="og:image" content={linkbanner} /> {/* Replace with the actual URL */}
+        <meta property="og:image" content={linkbanner} />
         <meta property="og:url" content="www.productions.brgrjoint.org" /> {/* Replace with the actual URL */}
 
         <link rel="icon" href="/favicon.ico" />
