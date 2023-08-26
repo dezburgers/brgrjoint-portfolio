@@ -15,14 +15,14 @@ import MouseGlow from './components/mouse/mouseglow';
 import { useSpring, animated, config } from 'react-spring';
 import icon from "../public/icon.png"
 import onstage from "../public/onstage.png"
-import wallspic from "public/photos/wallspic.jpg"
-import tishpic from "public/photos/tishpic.jpg"
-import hezpic from "public/photos/hezpic.jpg"
-import kelpic from "public/photos/kelpic.jpg"
+import wallspic from "public/photos/wallspic.JPG"
+import tishpic from "public/photos/tishpic.JPG"
+import hezpic from "public/photos/hezpic.JPG"
+import kelpic from "public/photos/kelpic.JPG"
 import police from "public/photos/police.jpg"
 import donald from "public/photos/donald.jpg"
 import keion from "public/photos/keion.jpeg"
-import worship from "public/photos/worship.jpg"
+import worship from "public/photos/worship.JPG"
 import trackmeet from "public/photos/trackmeet.jpg"
 
 
@@ -33,7 +33,7 @@ const SplashScreen = () => {
     // Simulate loading process
     setTimeout(() => {
       setShowSplash(false);
-    }, 5000); // Adjust the time as needed
+    }, 7000); // Adjust the time as needed
   }, []);
 
   // Define spring animation properties
@@ -51,20 +51,20 @@ const SplashScreen = () => {
     ],
     from: { transform: 'rotate(0deg)' },
     config: config.default,
-    delay: 500,
+    delay: 700,
   });
 
   const fadeBg = useSpring({
     to: { transform: 'scale(0)', opacity: 1, borderRadius: '50%' },
     from: { transform: 'scale(1)', opacity: 1, borderRadius: '0%' },
-    config: { duration: 300 },
-    delay: 1100,
+    config: { duration: 600 },
+    delay: 1800,
   });
   const fadeLogo = useSpring({
     to: { opacity: 0 },
     from: { opacity: 1 },
-    config: { duration: 400 },
-    delay: 1200, // Delay after the animation sequence starts
+    config: { duration: 600 },
+    delay: 2000, // Delay after the animation sequence starts
   });
 
   return (
@@ -178,31 +178,31 @@ const Timeline = () => {
   return (
     <main>
       <div className="relative lg:flex justify-center items-center lg:h-fit bg-bluewash px-4 py-14 lg:pt-16 lg:py-32 lg:shadow-3xl lg:shadow-white">
-        <div className="lg:w-9/12 text-white">
+        <div className="lg:w-11/12 text-white">
           <h1 className="justify-center text-center font-Montserrat font-extrabold text-5xl lg:text-7xl">Its Simple.</h1>
           <h2 className="justify-center text-center font-Montserrat font-normal lg:font-semibold text-base lg:text-2xl lg:pb-8">You don&apos;t have to pay a senior level creative&apos;s salary to get senior level creations.</h2>
-          <div className="lg:grid lg:grid-cols-2 lg:items-center lg:justify-center pt-8">
-            <div className="lg:grid lg:grid-rows-3 lg:grid-cols-2 lg:items-center lg:text-3xl">
-              <div className="lg:grid lg:grid-cols-3 font-Montserrat lg:pr-8 lg:text-xl lg:text-white">
-                <div className="lg:pb-0 pb-12 flex flex-col items-center">
-                  <i className="far fa-comment-dots fa-3x lg:fa-4x  mb-4"></i>
-                  <div className="text-center text-lg text-white px-2 lg:px-4 lg:font-normal">Subscribe to a plan & submit as many requests as you want</div>
+          <div className="grid lg:grid-cols-2 items-center justify-center pt-8">
+            <div className="lg:grid lg:grid-rows-4 gap-6 items-center justify-center font-Montserrat lg:pr-12 lg:text-xl:text-white">
+              <div className="lg:pb-0 pb-12 flex flex-col items-center">
+                <i className="far fa-comment-dots fa-3x lg:fa-4x  mb-4"></i>
+                <div className="text-center text-2xl text-white px-2 lg:px-4 lg:font-normal">Subscribe to a plan & submit as many requests as you want</div>
+              </div>
+              <div className="lg:pb-0 pb-12 flex flex-col items-center">
+                <i className="far fa-clock fa-3x lg:fa-4x mb-4"></i>
+                <div className="text-center text-2xl px-2 lg:px-4 lg:font-normal">
+                  Receive your files as fast as 48 hours (varies by project)
                 </div>
-                <div className="lg:pb-0 pb-12 flex flex-col items-center">
-                  <i className="far fa-clock fa-3x lg:fa-4x mb-4"></i>
-                  <div className="text-center text-lg px-2 lg:px-4 lg:font-normal">
-                    Receive your files as fast as 48 hours (varies by project)
-                  </div>
+              </div>
+              <div className="lg:pb-0 pb-12 flex flex-col items-center">
+                <i className="fas fa-paper-plane fa-3x lg:fa-4x  mb-4"></i>
+                <div className="text-center text-2xl px-2 lg:px-4 lg:font-normal">
+                  We&apos;ll make revisions until you&apos;re 100% satisfied
                 </div>
-                <div className="lg:pb-0 pb-12 flex flex-col items-center">
-                  <i className="fas fa-paper-plane fa-3x lg:fa-4x  mb-4"></i>
-                  <div className="text-center text-lg px-2 lg:px-4 lg:font-normal">
-                    We&apos;ll make revisions until you&apos;re 100% satisfied
-                  </div>
-                </div>
+              </div>
+              <div className="items-center p-4">
                 <a href="#pricing">
                   <button
-                    className="bg-darkpeach hover:bg-[#ba4e45] justify-center items-center lg:p-24 text-sm p-3 lg:text-base text-center font-bold text-white lg:py-6 rounded-3xl hover:-translate-y-4 hover:scale-105 ease-in-out duration-700"
+                    className="bg-darkpeach hover:bg-[#ba4e45] justify-center items-center lg:p-24 text-sm p-3 lg:text-2xl text-center font-bold text-white lg:py-6 rounded-3xl hover:-translate-y-4 hover:scale-105 ease-in-out duration-700"
                     style={{
                       boxShadow: '8px 3px 0px 2px rgba(0, 0, 0, 0.8)',
                       hover: 'none',
@@ -213,11 +213,12 @@ const Timeline = () => {
                 </a>
               </div>
             </div>
-            <Image className="" alt="Pastor Keion Henderson" src={pastorke} />
+
+            <Image className="pt-4" alt="Pastor Keion Henderson" src={pastorke} />
           </div>
         </div>
       </div>
-    </main>
+    </main >
   );
 };
 
@@ -235,7 +236,7 @@ const VideoPortfolio = () => {
             <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 lg:text-xl xl:text-3xl drop-shadow-sm">Bayview San Diego | Social Media </text>
             <div className="flex h-full items-center select-none px-4 pt-2 lg:px-32">
               <video muted autoPlay loop
-                className="hover:scale-105 ease-in-out duration-700 w-full lg:w-1/2 rounded-3xl z-10 shadow-blue-500 shadow-2xl hover:shadow-purple-500 hover:shadow-0 0 75px 75px rgba(0, 0, 0, 1);" preload="auto">
+                className="hover:scale-105 ease-in-out duration-700 w-full md:w-1/2 rounded-3xl z-10 shadow-blue-500 shadow-2xl hover:shadow-purple-500 hover:shadow-0 0 75px 75px rgba(0, 0, 0, 1);" preload="auto">
                 <source src="./videos/bayview-highlight.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -258,7 +259,7 @@ const VideoPortfolio = () => {
 
           <div className="pt-8 lg:pt-4 pb-0 lg:pb-2">
             <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Youth Community Center | &quot;Meet Alex&quot;</text>
-            <div className="flex h-full items-center select-none px-2 sm:pt-32 lg:pt-44 md:px-32">
+            <div className="flex h-full items-center select-none px-2 pt-20 lg:pt-44 md:px-32">
               <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full  h-fit  overflow-hidden -translate-x-24">
                 <div className="marquee overflow-hidden py-2">
                   <Marquee autoFill speed={160} >
@@ -282,7 +283,7 @@ const VideoPortfolio = () => {
 
         <a href="https://youtube.com/playlist?list=PLECR53T8KBZhfN6bPM0V7q1XmBRSba1MR&si=CcR1kWrLidgSEgvF" target="_blank" rel="noopener noreferrer" className="no-underline ">
 
-          <div>
+          <div className="pt-20 lg:pt-4 pb-0 lg:pb-2">
             <text className="opacity-0 relative font-mono text-xs italic -right-14 -top-2 md:text-xl xl:text-3xl drop-shadow-sm">World Vision Rwanda | Travel Doc</text>
             <div className="flex h-full items-center select-none px-4 pt-8 lg:pt-32 md:px-32">
               <video muted autoPlay loop
@@ -308,7 +309,7 @@ const VideoPortfolio = () => {
 
         <a href="https://youtube.com/playlist?list=PLECR53T8KBZhfN6bPM0V7q1XmBRSba1MR&si=CcR1kWrLidgSEgvF" target="_blank" rel="noopener noreferrer" className="no-underline ">
 
-          <div className="pt-24 lg:pt-32 sm:pt-48">
+          <div className="pt-52 lg:pt-32 pb-20">
             <text className="opacity-0 relative font-mono text-xs italic md:-right-96 top-12 xl:-right-224 md:text-xl xl:text-3xl drop-shadow-sm">Las Vegas Pop Rapper | Music Video</text>
             <div className="flex h-full items-center select-none lg:pt-44 lg:px-32 px-0">
               <div className="text-white opacity-20  hover:opacity-100 font-bold text-5xl xl:text-9xl w-full h-full -translate-x-24">
@@ -373,24 +374,25 @@ const BenefitsGrid = () => {
   ];
 
   return (
-    <div id="Benefits" className="flex flex-col bg-white items-center justify-center w-full lg:px-24  lg:pt-24  lg:pb-2  pt-4 px-8 font-Montserrat">
-      <h1 className="text-center text-5xl lg:text-8xl font-bold pt-14 lg:mb-24">Membership Benefits</h1>
-      <div className="grid grid-rows-3 lg:grid-cols-3 gap-1 lg:gap-4">
-        {features.map((feature, index) => (
-          <div key={index} className="flex flex-col items-center text-center p-4 bg-white rounded-lg">
-            <span className="text-blue-500">{feature.icon}</span> {/* Apply blue color */}
-            <h3 className="lg:mt-4 text-base lg:text-xl font-bold">{feature.title}</h3>
-            <p className="lg:mt-2 text-xs lg:text-base text-gray-700">{feature.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <main className=" w-full md:h-192 ">
+      <div id="Benefits" className="flex flex-col bg-[#E85556] items-center justify-center  lg:px-24  lg:pt-24  lg:pb-2 pt-4 px-8 font-Montserrat select-none">
+        <h1 className="text-center text-5xl lg:text-8xl font-bold bg-[#E85556] text-white pt-8">Membership Benefits</h1>
+        <div className="grid grid-rows-3 lg:grid-cols-3 gap-1 lg:gap-4">
+          {features.map((feature, index) => (
+            <div key={index} className="flex flex-col items-center text-center p-4  rounded-lg">
+              <span className="text-blue-800">{feature.icon}</span> {/* Apply blue color */}
+              <h3 className="lg:mt-4 text-base  text-white lg:text-xl font-bold">{feature.title}</h3>
+              <p className="lg:mt-2 text-xs lg:text-base text-white">{feature.text}</p>
+            </div>
+          ))}
+        </div>
+      </div></main>
   );
 };
 
 const DopeStuff = () => (
   <main>
-    <section id="DopeStuff" className="flex bg-white py-8 lg:pt-4 lg:items-start lg:pb-8 px-4 lg:px-0">
+    <section id="DopeStuff" className="flex bg-white py-8 lg:pt-4 lg:items-start lg:pb-8 px-4 lg:px-0 select-none">
       <div className="justify-center lg:pl-12 z-0">
         <video autoPlay loop muted className="w-72 lg:overflow-y-auto sm:rounded-3xl rounded-2xl lg:w-auto">
           <source rel="preload" src={"../videos/gallery1.mp4"} type="video/mp4" />
@@ -398,7 +400,7 @@ const DopeStuff = () => (
         </video>
       </div>
       < div className=" lg:z-0 lg:pr-12 lg:pb-10 overflow-hidden sticky lg:top-0 lg:w-full pl-2 lg:pl-0 pt-2 lg:pt-12 font-Montserrat" >
-        <h2 className="font-bold text-5xl lg:text-8xl xl:text-[7rem] lg:py-2 lg:w-full lg:text-left lg:pl-32 lg:z-10">
+        <h2 className="font-bold text-5xl md:text-7xl lg:text-8xl xl:text-[7rem] lg:py-2 lg:w-full lg:text-left lg:pl-32 lg:z-10">
           WE <span className="text-blue-500"> CREATE </span><br></br>REALLY<span className="text-blue-500"> DOPE </span><br></br>STUFF.</h2>
         <div className="lg:pl-52 lg:py-12">
           <a href="#pricing" className=" bg-blue-500 hover:bg-peach no-underline  text-white hover:text-black text-xs px-4 py-1 lg:text-3xl transition-all duration-150 font-bold lg:py-3 lg:px-24 rounded-2xl text-center">
@@ -445,10 +447,10 @@ const Pastors = () => {
 };
 
 const ScopeofWork = () => (
-  <main className="bg-peach h-screen lg:overflow-hidden px-3 lg:pb-0 lg:p-12">
+  <main className="bg-peach h-screen lg:overflow-hidden px-3 lg:pb-0 lg:p-12 overflow-y-clip">
     <main id="ScopeofWork">
-      <p className="lg:flex-col lg:w-screen font-bold text-blue-600 text-4xl lg:text-6xl font-Montserrat lg:px-96 pt-12 lg:pt-6 lg:mt-4 text-center">Scope of Our Work</p>
-      <div className="lg:w-4/5 lg:h-screen lg:absolute lg:left-52 lg:right-52 lg:pt-6">
+      <p className="md:flex-col md:w-screen font-bold text-blue-600 text-4xl lg:text-6xl font-Montserrat md:px-96 pt-12 md:pt-6 lg:mt-4 text-center">Scope of Our Work</p>
+      <div className="md:w-4/5 md:h-screen md:absolute md:left-52 md:right-52 md:pt-6">
         <div className="h-3/5 text-lg py-4 lg:text-xl xl:text-2xl border-8 border-white lg:border-darkpeach text-blue-600 lg:text-white lg:bg-blue-600 shadow-darkpeach shadow-2xl rounded-3xl gap-4 lg:grid lg:grid-cols-3 lg:grid-rows-5 lg:gap-4 lg:pt-12 px-4 lg:px-14 font-Montserrat font-bold">
           {[
             'Commercials',
@@ -481,13 +483,13 @@ const ScopeofWork = () => (
 );
 
 const Perfection = () => (
-  <section id="Perfection" className="flex bg-blue-500 py-8 lg:pt-4 lg:items-start lg:pb-8 px-4 lg:px-0">
-    <div className="lg:flex-cols-2 lg:flex lg:z-0 lg:pr-12 lg:pb-10 overflow-hidden sticky lg:top-0 lg:w-full pl-2 lg:pl-0 pt-2 lg:pt-12 font-Montserrat" >
+  <section id="Perfection" className="flex bg-blue-500 py-8 md:pt-4 md:items-start md:pb-8 px-4 md:px-0">
+    <div className=" md:flex-cols-2  md:flex md:z-0 md:pr-12 md:pb-10 overflow-hidden sticky md:top-0 md:w-full pl-2 md:pl-0 pt-2 md:pt-12 font-Montserrat" >
       <div>
-        <h2 className="text-white font-bold text-5xl lg:text-8xl xl:text-[7rem] lg:py-2 lg:w-full lg:text-left lg:pl-32 lg:z-10">
+        <h2 className=" sticky text-white font-bold text-5xl lg:text-8xl xl:text-[7rem] lg:py-2 lg:w-full lg:text-left lg:pl-32 lg:z-10">
           PERFECTION <span className="text-darkpeach"> IS OUR </span><br></br>LOVE<span className="text-darkpeach"> LANGUAGE. </span></h2>
-        <div className="lg:pl-52 lg:py-12">
-          <a href="#pricing" className=" bg-blue-500 hover:bg-peach no-underline  text-white hover:text-black text-xs px-4 py-1 lg:text-3xl transition-all duration-150 font-bold lg:py-3 lg:px-24 rounded-2xl text-center">
+        <div className="py-6 lg:pl-52 lg:py-12">
+          <a href="#pricing" className=" bg-darkpeach hover:bg-[#ab4545] no-underline  text-white text-base px-4 py-12 lg:text-3xl transition-all duration-300 font-bold lg:py-3 lg:px-24 rounded-2xl text-center">
             Choose Your Plan
           </a>
         </div>
@@ -591,7 +593,7 @@ const Pricing = () => {
   }, []);
 
   return (
-    <div id="pricing" className="py-14 lg:py-0 bg-offblack">
+    <div id="pricing" className="py-14 lg:py-8 bg-offblack">
       {/* Title and description */}
       <p className="text-white font-bold text-4xl lg:text-6xl font-Montserrat lg:px-96 lg:pt-16 lg:md:pt-24 text-center">Our Pricing Options</p>
       <p className="text-white font-light text-xl lg:text-3xl font-Montserrat pb-4 lg:px-96 lg:md:pt-4 lg:pb-14 text-center">We have affordable packages for every situation</p>
@@ -671,9 +673,9 @@ const Voice = () => {
     <main id="OurConcept" className="bg-white flex-col px-4 pt-14 lg:w-screen lg:pt-6 lg:pr-11 lg:pb-24">
       <p className="font-bold text-4xl lg:text-5xl font-Montserrat lg:px-72 lg:pt-24 md:pt-16 lg:mt-4 text-center">Helping Visionaries Find Their Voice</p>
       <p className="font-light text-lg lg:text-xl pb-10 lg:pb-2 font-Montserrat lg:px-80 text-center">We take your mission and vision and translate it into pixels to be shared with the world.</p>
-      <div className="lg:grid lg:grid-cols-2 lg:gap-4 lg:md:px-20"> {/* Updated grid class */}
+      <div className="lg:grid md:grid-cols-2 md:grid-rows-2 lg:gap-4 lg:md:px-20"> {/* Updated grid class */}
         <div className="flex items-center justify-center w-full px-8 lg:px-44 xl:px-44 lg:pt-2 lg:pb-2 font-Montserrat"> {/* Adjusted width */}
-          <div className="lg:grid flex flex-col items-center justify-center text-center">
+          <div className="md:grid flex flex-col items-center justify-center text-center">
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col items-center bg-white rounded-lg">
                 <span className="text-blue-500">{feature.icon}</span>
@@ -694,7 +696,6 @@ const Voice = () => {
     </main>
   );
 };
-
 
 const FooterNav = () => {
   const scrollToSection = (sectionId, duration) => {
@@ -729,7 +730,7 @@ const FooterNav = () => {
   };
 
   return (
-    <footer className="invisible md:visible hover:bg-black hover:shadow-2xl hover:shadow-purple-600 border-blue-500 transition-all duration-700
+    <footer className="sm:invisible md:invisible lg:visible hover:bg-black hover:shadow-2xl hover:shadow-purple-600 border-blue-500 transition-all duration-700
     fixed z-40 bottom-20 left-10 right-10 font-Montserrat font-bold w-full sm:w-1/2 md:w-1/2 xl:w-[43%] p-[.7rem] bg-blue-500 text-white
     mx-auto rounded-full shadow-black shadow-2xl drop-shadow-lg">
       <div className="flex justify-center text-sm px-4">
