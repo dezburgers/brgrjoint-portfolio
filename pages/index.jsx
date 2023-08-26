@@ -891,14 +891,24 @@ export default function Home() {
   useEffect(() => {
     const delay = setTimeout(() => {
       setShowFooter(true);
-    }, 3000);
+    }, 5000);
 
     return () => clearTimeout(delay);
   }, []);
+
+  useEffect(() => {
+    const originalTitle = document.title; // Store the original title
+
+    // Change the title when the component unmounts
+    return () => {
+      document.title = "Don't leave this content behind!";
+    };
+  }, []);
+
   return (
     <div>
       <Head>
-        <title>Creativity Done Right</title>
+        <title>Creativity Done Right | BRGR JOINT Productions</title>
         <meta name="description" content="Taking Creativity To The Next" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
