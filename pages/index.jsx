@@ -158,16 +158,16 @@ const OurConcept = () => {
           Find The Right Plan For You
         </button></a>  </h3>
       <Marquee className="bg-peach transition-all duration-1000 hover:bg-bluewash " autoFill speed={30}>
-        <div className="grid grid-cols-9 w-screen-150 lg:w-screen gap-4 py-6 px-2">
-          <Image src={tishpic} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={hezpic} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={wallspic} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={kelpic} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={police} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={worship} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={keion} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={donald} className="rounded-3xl" alt="portfolio image" ></Image>
-          <Image src={trackmeet} className="rounded-3xl" alt="portfolio image" ></Image>
+        <div className="grid grid-cols-9 w-screen-150 lg:w-screen gap-4 py-6 px-2 transition-all duration-500">
+          <Image src={tishpic} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={hezpic} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={wallspic} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={kelpic} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={police} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={worship} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={keion} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={donald} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
+          <Image src={trackmeet} className="rounded-3xl" rel="preload" alt="portfolio image" ></Image>
         </div>
       </Marquee>
     </main>
@@ -214,7 +214,7 @@ const Timeline = () => {
               </div>
             </div>
 
-            <Image className="pt-4" alt="Pastor Keion Henderson" src={pastorke} />
+            <Image className="pt-4" alt="Pastor Keion Henderson" src={pastorke} rel="preload" />
           </div>
         </div>
       </div>
