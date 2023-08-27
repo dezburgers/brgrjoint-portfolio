@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: "class",
   content: [
@@ -22,7 +23,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        Montserrat: ["Montserrat"],
+        Montserrat: ["Montserrat", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
       spacing: {
